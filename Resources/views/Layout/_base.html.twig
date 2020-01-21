@@ -1,0 +1,16 @@
+{% extends "UKMDesignBundle:Layout:_framework.html.twig"|UKMpath %}
+
+{% block framework_content %}
+	{% embed "UKMDesignBundle:Layout:header.html.twig"|UKMpath %}{% endembed %}
+
+	<div class="container-fluid" id="UKMDesign_sitemap" style="display:none;">
+		{% embed "UKMDesignBundle:Layout:UKMMobil.html.twig"|UKMpath %}{% endembed %}
+		{% block sectionNav %}{% endblock %}
+		{% embed "UKMDesignBundle:Layout:nav.html.twig"|UKMpath with {'hidden': true} %}{% endembed %}
+	</div>
+	<div id="UKMDesign_content">
+		{% block content %}Designfil mangler content-block.{% endblock %}
+	</div>
+	
+	{% embed "UKMDesignBundle:Layout:footer.html.twig"|UKMpath %}{% endembed %}
+{% endblock %}
