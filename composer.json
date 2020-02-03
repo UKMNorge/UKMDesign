@@ -19,10 +19,7 @@
         }
     },
     "require": {
-        "twig/twig": "^3.0",
+        "twig/twig": "~1.0 || ^3.0",
         "symfony/yaml": ">=2.0"
-    },
-    "require-dev": {
-        "mariusmandal/wpoo": "dev-master"
     }
 }

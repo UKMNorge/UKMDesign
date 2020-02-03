@@ -1,5 +1,6 @@
 <?php
-namespace UKMNorge\DesignBundle\Utils;
+
+namespace UKMNorge\Design\Header;
 	
 class SEO {
 	public static $canonical;
