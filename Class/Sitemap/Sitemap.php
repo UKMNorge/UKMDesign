@@ -29,10 +29,10 @@ class Sitemap
      */
     public static function loadFromYamlfile()
     {
-        self::$config = Yaml::parse(file_get_contents(static::$configPath));
+        static::$config = Yaml::parse(file_get_contents(static::$configPath));
 
-        foreach (self::$config as $key => $val) {
-            self::addSection(new Section($key, $val['url'], $val['title'], $val));
+        foreach (static::$config as $key => $val) {
+            static::addSection(new Section($key, $val['url'], $val['title'], $val));
         }
     }
 
@@ -44,7 +44,7 @@ class Sitemap
      */
     public static function getSection(String $id)
     {
-        foreach (self::$sections as $order => $section) {
+        foreach (static::$sections as $order => $section) {
             if (is_object($section) && $id == $section->getId()) {
                 return $section;
             }
@@ -62,10 +62,10 @@ class Sitemap
      */
     public static function addSection(Section $section)
     {
-        if (!self::getSection($section->getId())) {
-            self::$sections[] = $section;
+        if (!static::getSection($section->getId())) {
+            static::$sections[] = $section;
         }
-        return sizeof(self::$sections);
+        return sizeof(static::$sections);
     }
 
     /**
@@ -75,7 +75,7 @@ class Sitemap
      */
     public static function getSections()
     {
-        return self::$sections;
+        return static::$sections;
     }
 
     /**
@@ -89,7 +89,7 @@ class Sitemap
      */
     public static function getPage($sectionId, $pageId = null)
     {
-        $section = self::getSection($sectionId);
+        $section = static::getSection($sectionId);
         if (is_object($section)) {
             if (null == $pageId) {
                 return $section->getUrl();
