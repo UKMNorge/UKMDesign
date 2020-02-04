@@ -38,9 +38,7 @@
 		</script>
 		<script>
 			var UKM_HOSTNAME = '{{ UKM_HOSTNAME }}';
-			{% if blog_url is defined and blog_url is not empty %}
-			var blog_url = '{{ blog_url }}/';
-			{% endif %}
+            var blog_url = '{{ UKMDesign.getSiteUrl() }}/';
 		</script>
 	</head>
 	

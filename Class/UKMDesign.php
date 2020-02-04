@@ -34,6 +34,7 @@ class UKMDesign
     static $header;
     static $current_url;
     static $render_without_framework = false;
+    static $site_url;
     static $ajax_url;
     static $current_color_scheme;
     static $sitemap;
@@ -331,5 +332,26 @@ class UKMDesign
      */
     public static function isDevEnv() {
         return defined('UKM_HOSTNAME') && UKM_HOSTNAME == 'ukm.dev';
+    }
+
+    /**
+     * Set the site url 
+     * 
+     * (not current page, but main site / blog / whatever)
+     *
+     * @param String $site_url
+     * @return void
+     */
+    public static function setSiteUrl( String $site_url ) {
+        static::$site_url = $site_url;
+    }
+
+    /**
+     * Get site URL
+     *
+     * @return void
+     */
+    public static function getSiteUrl() {
+        return static::$site_url;
     }
 }
