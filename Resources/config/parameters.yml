@@ -6,6 +6,9 @@ parameters:
         person: http://grafikk.ukm.no/placeholder/person.jpg
     hvaerukm:
         slogan: Der vi møtes, inspirerer, utfordrer og skaper sammen
+        slogan_alt: >
+            Noen deltar på UKM for å vise frem noe de brenner for,
+            noen prøver noe helt nytt og andre er med sånn at alle får vist sin beste side.
         kort: >
             Ønsker du å skape noe, møte likesinnede og utvikle talentet ditt? 
             UKM er en møteplass for ungdom og kultur, der vi skaper noe sammen.
