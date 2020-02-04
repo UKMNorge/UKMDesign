@@ -1,10 +1,10 @@
 <div class="row sitemap mt-1 mt-md-5">
-	{% set section = Sitemap.getSection('UKM') %}
+	{% set section = UKMDesign.getSitemap().getSection('UKM') %}
 	<div class="col-xs-12 col-md-8 col-lg-8 section divider">
 		<div class="pageContainer row">
 			{% if menu is defined %}
 				{% set trash = menu.get() %}
-				{% set section_local = Sitemap.getSection('extra') %}
+				{% set section_local = UKMDesign.getSitemap().getSection('extra') %}
 				{% if section_local %}
 					{% for page in section_local.getPages().getAll() %}
 						<div class="col-6 col-lg-4">
@@ -28,7 +28,7 @@
 				</div>
 			{% endfor %}
 			<div class="col-6 col-lg-4">
-				{% set section = Sitemap.getSection('ukmtv') %}
+				{% set section = UKMDesign.getSitemap().getSection('ukmtv') %}
 				<div class="page p-2 m-1 m-md-2 center">
 					<a href="{{ section.getUrl() }}">
 						{{ section.getTitle() }}
@@ -45,7 +45,7 @@
 				</div>
 
 				<div class="d-inline mx-2">
-					<a href="{{ Sitemap.getPage('UKM','pressebilder').getUrl() }}" target="_blank">
+					<a href="{{ UKMDesign.getSitemap().getPage('UKM','pressebilder').getUrl() }}" target="_blank">
 						<span style="font-size: 3em;"><img src="//grafikk.ukm.no/UKMresponsive/img/Entypo-social/flickr-with-circle.svg" width="35" /></span></a>
 				</div>
 
@@ -59,14 +59,14 @@
 
 		<div class="row-flex">
 			<div class="col-4 float-right" align="right">
-				<a href="{{ Sitemap.getSection('english').getUrl() }}">ENGLISH</a>
+				<a href="{{ UKMDesign.getSitemap().getSection('english').getUrl() }}">ENGLISH</a>
 			</div>
 		</div>
 	</div>
 
 
 	<div class="col-xs-12 col-md-4 col-lg-4 section">
-		{% for section in Sitemap.getSections()|filter( section => section.getId() in ['organisasjonen','arrangorer']) %}
+		{% for section in UKMDesign.getSitemap().getSections()|filter( section => section.getId() in ['organisasjonen','arrangorer']) %}
 			<h2 class="header mt-2" style="color: #{{ section.getColor() }}; border: 0px;">
 				<a href="{{ section.getUrl() }}" style="color: #{{ section.getColor() }};">{{ section.getTitle() }}</a>
 			</h2>

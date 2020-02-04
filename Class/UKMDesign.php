@@ -230,6 +230,9 @@ class UKMDesign
             );
         }
         static::$current_page = $page;
+        static::getHeader()::getSEO()
+            ->setTitle( $page->getTitle() )
+            ->setCanonical( $page->getUrl() );
     }
 
     /**
@@ -254,6 +257,8 @@ class UKMDesign
     public static function setCurrentSection(Section $section)
     {
         static::$current_section = $section;
+        static::getHeader()::getSEO()
+            ->setSection( $section->getTitle() );
     }
 
     /**

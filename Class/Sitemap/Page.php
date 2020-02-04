@@ -45,7 +45,7 @@ class Page
      * (thanks to Section::correctUrlHostname($this->url))
      * changes all ukm.no-references with ukm.dev
      * 
-     * @return void
+     * @return String
      */
     public function getUrl()
     {

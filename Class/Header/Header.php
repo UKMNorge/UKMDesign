@@ -9,6 +9,7 @@ class Header
     static $slogan;
     static $button_background;
     static $logo;
+    static $seo;
 
     /**
      * Set banner
@@ -67,6 +68,28 @@ class Header
     public static function visibleSectionTitle()
     {
         return static::$visible_section_title;
+    }
+
+    /**
+     * Get SEO object
+     *
+     * @return SEO
+     */
+    public static function getSEO() {
+        if( is_null(static::$seo)) {
+            static::$seo = new SEO();
+        }
+        return static::$seo;
+    }
+
+    /**
+     * Set new SEO object
+     *
+     * @param SEO $seo
+     * @return void
+     */
+    public static function setSEO( SEO $seo ) {
+        static::$seo = $seo;
     }
 
     /**
