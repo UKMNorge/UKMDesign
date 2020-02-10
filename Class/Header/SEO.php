@@ -48,6 +48,18 @@ class SEO
     }
 
     /**
+     * Set canonical URL
+     * 
+     * @see setCanonical
+     *
+     * @param String $url
+     * @return self
+     */
+    public function setUrl(String $url ) {
+        return $this->setCanonical($url);
+    }
+
+    /**
      * Get page description
      *
      * @return String

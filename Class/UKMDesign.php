@@ -3,6 +3,7 @@
 namespace UKMNorge\Design;
 
 use Exception;
+use UKMNorge\Design\Header\Banner;
 use UKMNorge\Design\Header\Header;
 use UKMNorge\Design\Sitemap\Sitemap;
 use UKMNorge\Design\Sitemap\Page;
@@ -76,14 +77,14 @@ class UKMDesign
     }
 
     /**
-     * Set new header
+     * Set new banner image
      *
-     * @param Header $header
+     * @param Banner $banner
      * @return void
      */
-    public static function setBanner(Header $header)
+    public static function setBanner(Banner $banner)
     {
-        static::$header = $header;
+        static::getHeader()::setBanner($banner);
     }
 
     /**

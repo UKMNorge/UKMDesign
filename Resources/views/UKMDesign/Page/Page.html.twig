@@ -1,0 +1,24 @@
+{% extends "UKMDesign/Layout/base.html.twig"|UKMpath %}
+
+{% block content %}
+	{% block page_image %}{% endblock %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 ml-md-auto mr-md-auto col-lg-8">
+				{% block page_content %}{% endblock %}
+			</div>
+			{% block page_menu %}
+				{% if menu is defined %}
+					<div class="col-12 col-md-10 col-lg-3 ml-md-auto mr-md-auto mt-5">
+						{% for link in menu.getAll() %}
+							<a href="{{ link.getUrl() }}" class="btn btn-{{ link.isActive() ? '' : 'outline-' }}primary btn-block btn-sm">
+								{{ link.getTitle() }}
+							</a>
+						{% endfor %}
+					</div>
+				{% endif %}
+			{% endblock %}
+		</div>
+	</div>
+	{% block page_blocks %}{% endblock %}
+{% endblock %}

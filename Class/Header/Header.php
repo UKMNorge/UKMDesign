@@ -25,7 +25,7 @@ class Header
     /**
      * Get banner
      *
-     * @return void
+     * @return Banner
      */
     public static function getBanner()
     {
@@ -49,7 +49,7 @@ class Header
      */
     public static function hideSectionTitle()
     {
-        $this->visible_section_title = false;
+        static::$visible_section_title = false;
     }
     /**
      * Show section title (default)
@@ -58,7 +58,7 @@ class Header
      */
     public static function showSectionTitle()
     {
-        $this->visible_section_title = true;
+        static::$visible_section_title = true;
     }
     /**
      * Should section title be visible

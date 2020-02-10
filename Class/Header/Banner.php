@@ -25,7 +25,7 @@ class Banner extends Image
     /**
      * Get vertical alignment
      *
-     * @return String alignment
+     * @return Vertical alignment
      */
     public function getPosY()
     {
@@ -97,7 +97,7 @@ class Banner extends Image
      */
     public function getPosition()
     {
-        return is_null($this->pos_y) ?
+        return !is_null($this->pos_y) ?
             'center ' . ($this->getPosY()->__toString() == 'bottom'
                 ? '95%'
                 : $this->getPosY()->__toString()) : '0px 0px';
