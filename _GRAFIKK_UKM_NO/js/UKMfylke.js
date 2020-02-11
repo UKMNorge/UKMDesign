@@ -1,5 +1,11 @@
+UKMresponsive = UKMresponsive || {};
+
 UKMresponsive.kommuneliste = function(filter_container) {
+    var emitter = new UKMresponsive.emitter('kommuneliste');
     var self = {
+        on: function(event, callback) {
+            emitter.on(event, callback);
+        },
         getSearchSelector: function() {
             return filter_container + ' input[name="search"]';
         },
@@ -8,6 +14,16 @@ UKMresponsive.kommuneliste = function(filter_container) {
         },
         bind: function() {
             $(document).on('keyup', self.getSearchSelector(), self.filter);
+            $(document).on('keypress', function(e) {
+                if (e.which == 13 && $(self.getSearchSelector()).is(':focus') && self.getMatchCount() == 1) {
+                    self.go();
+                }
+            });
+        },
+
+        go: function() {
+            var selected = $(self.getKommuneSelector() + ':visible');
+            window.location.href = selected.find('a').attr('href');
         },
 
         filter: function() {
@@ -27,10 +43,15 @@ UKMresponsive.kommuneliste = function(filter_container) {
             }).show();
 
             self.addCountHelper();
+            emitter.emit('change', [self.getMatchCount()]);
+        },
+
+        getMatchCount: function() {
+            return $(self.getKommuneSelector() + ':visible').length;
         },
 
         addCountHelper: function() {
-            var numShown = $(self.getKommuneSelector() + ':visible').length;
+            var numShown = self.getMatchCount();
             $(filter_container).removeClass('found-none found-few found-many').attr('data-count', numShown);
             if (numShown == 0) {
                 $(filter_container).addClass('found-none');

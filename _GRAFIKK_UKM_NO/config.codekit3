@@ -138,6 +138,16 @@
 		"oF": 1,
 		"oS": 3
 		},
+	"/css/UKMresponsive-dark.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/UKMresponsive-dark-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/css/UKMresponsive-ego.css": {
 		"aP": 1,
 		"bl": 0,
@@ -4735,6 +4745,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/geolocation.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/geolocation.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/jquery-3.2.1.min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -4820,6 +4841,17 @@
 		"oA": 1,
 		"oAP": "/js/slideout.min.min.js",
 		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/UKMemitter.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/UKMemitter.min.js",
+		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
@@ -5518,10 +5550,24 @@
 "hooks": [
 	],
 "manualImportLinks": {
+	"/js/UKMresponsive.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "/js/UKMemitter.js",
+			"position": 9,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "/js/geolocation.js",
+			"position": 12,
+			"type": 1
+			}
+		]
 	},
 "projectAttributes": {
 	"creationDate": 533401094,
-	"displayValue": "UKMresponsive",
+	"displayValue": "UKMdesign",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-dunnoGirl",
 	"iconImageWasSetByUser": 0

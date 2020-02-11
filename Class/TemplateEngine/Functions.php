@@ -9,7 +9,7 @@ class Functions extends FunctionDefinitions {
     public function UKMasset($path)
 	{
 		if ( defined('UKM_HOSTNAME') && UKM_HOSTNAME == 'ukm.dev' ) {
-			return '//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/'. $path;
+			return '//ukm.dev/wp-content/themes/UKMDesign/_GRAFIKK_UKM_NO/'. $path;
 		}
 		return '//grafikk.ukm.no/UKMresponsive/'. $path;
 	}
