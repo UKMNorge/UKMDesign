@@ -1,0 +1,6 @@
+<form action="//husk.{{UKM_HOSTNAME}}/f-{{ fylkeid is defined and fylkeid is not empty ? fylkeid : 0 }}/k-{{ kommuneid is defined and kommuneid is not empty ? kommuneid : 0 }}/" method="POST">
+	<input type="tel" name="mobil" class="form-control " placeholder="Skriv inn ditt mobilnummer" maxlength="8" required/>
+	<p class="right my-0">
+		<button type="submit" class="btn my-1 btn-outline-primary">Send gratis sms</button>
+	</p>
+</form>
