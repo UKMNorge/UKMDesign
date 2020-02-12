@@ -19,7 +19,7 @@
 			{# BRAND ICON #}
 			<div class="navbar-header float-left">
 				{% if UKMDesign.getHeader().getLogo().visible() %}
-					<a href="{{ Sitemap.getPage('UKM', 'forsiden') }}">
+					<a href="{{ UKMDesign.getSitemap().getPage('UKM', 'forsiden') }}">
 						<img src="{{ UKMDesign.getHeader().getLogo() }}" id="UKMlogo" />
 					</a>
 				{% endif %}
