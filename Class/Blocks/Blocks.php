@@ -13,8 +13,8 @@ abstract class Blocks {
     }
 
     public function getAll() {
-        $this->blocks = [];
         if( is_null($this->blocks)) {
+            $this->blocks = [];
             $this->load();   
         }
         return $this->blocks;
