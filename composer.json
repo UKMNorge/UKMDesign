@@ -2,6 +2,7 @@
     "name": "ukmnorge/design",
     "description": "Felles design for UKM.no og undersider",
     "homepage": "http://github.com/UKMNorge/UKMDesign",
+    "minimum-stability": "dev",
     "authors": [{
             "name": "Asgeir Stavik Hustad",
             "email": "asgeirsh@ukmmedia.no",
