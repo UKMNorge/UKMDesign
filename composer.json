@@ -1,7 +1,7 @@
 {
-    "name": "ukmnorge/designbundle",
+    "name": "ukmnorge/design",
     "description": "Felles design for UKM.no og undersider",
-    "homepage": "http://github.com/UKMNorge/UKMresponsive",
+    "homepage": "http://github.com/UKMNorge/UKMDesign",
     "authors": [{
             "name": "Asgeir Stavik Hustad",
             "email": "asgeirsh@ukmmedia.no",
@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "UKMNorge\\DesignBundle\\": "UKMNorge\\DesignBundle"
+            "UKMNorge\\Design\\": "Class/"
         }
     },
     "require": {
