@@ -1,4 +1,4 @@
-{% extends "UKMDesign/Layout/"~ (singleMode is defined and singleMode ? 'singleMode' : 'framework' ) ~".html.twig"|UKMpath %}
+{% extends ("UKMDesign/Layout/"~ (singleMode is defined and singleMode ? 'singleMode' : 'framework' ) ~".html.twig")|UKMpath %}
 
 {% block framework_content %}
 	{% embed "UKMDesign/Layout/header.html.twig"|UKMpath %}{% endembed %}
