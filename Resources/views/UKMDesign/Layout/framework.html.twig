@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		
-		<title>{{ SEO.getTitle()|raw }}</title>
+		<title>{{ UKMDesign.getHeader().getSeo().getTitle()|raw }}</title>
 		<link rel="shortcut icon" href="//grafikk.ukm.no/favicon.ico" />
 		{% if blog is defined %}
 			<link rel="alternate" type="application/rss+xml" href="{{blog.feed}}" title="{{blog.name}} RSS-feed" />
@@ -32,7 +32,7 @@
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.10&appId={{ SEO is defined ? SEO.getFBAppId() : '' }}";
+		js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.10&appId={{ UKMDesign.getHeader().getSeo().getFBAppId() }}";
 		fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 		</script>
