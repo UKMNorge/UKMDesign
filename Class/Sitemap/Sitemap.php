@@ -94,7 +94,6 @@ class Sitemap
      */
     public static function addSection(Section $section)
     {
-        echo "Adding section ".$section->getId().". ";
         if (!static::getSection($section->getId())) {
             static::$sections[] = $section;
         }
