@@ -3,7 +3,6 @@
 	<div class="col-xs-12 col-md-8 col-lg-8 section divider">
 		<div class="pageContainer row">
 			{% if menu is defined %}
-				{% set trash = menu.get() %}
 				{% set section_local = UKMDesign.getSitemap().getSection('extra') %}
 				{% if section_local %}
 					{% for page in section_local.getPages().getAll() %}

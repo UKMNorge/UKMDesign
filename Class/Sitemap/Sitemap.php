@@ -2,13 +2,15 @@
 
 namespace UKMNorge\Design\Sitemap;
 
+use Exception;
 use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Yaml\Exception\ParseException;
 
 class Sitemap
 {
 
-    static $configPath;
-    static $config = [];
+    static $sitemapPath;
+    static $sitemap = [];
     static $sections = [];
 
     /**
@@ -16,22 +18,51 @@ class Sitemap
      *
      * @param String $yaml_file_path
      */
-    public function __construct(String $yaml_file_path)
+    public function __construct(String $yaml_cache_dir = null, String $yaml_install_dir)
     {
-        static::$configPath = $yaml_file_path;
+        $filename = 'sitemap.yml';
+        try {
+            # Loading cached sitemap copied from Github. Skip warnings, handle it by checking for FALSE.
+            $yml = @file_get_contents($yaml_cache_dir.$filename);
+            if ( $yml === FALSE ) {
+                throw new Exception("Failed to load yml");
+            }
+            static::$sitemap = Yaml::parse($yml);
+        } catch (Exception $e) {
+            # Loading backup sitemap from vendor install
+            $yml = @file_get_contents($yaml_install_dir.$filename);
+            if ( $yml === FALSE ) {
+                throw new Exception("Failed to load yml");
+            }
+            static::$sitemap = Yaml::parse($yml);
+        }
+
+        foreach (static::$sitemap as $key => $val) {
+            static::addSection(new Section($key, $val['url'], $val['title'], $val));
+        }
+    }
+ 
+    /**
+     * Loads a new Sitemap.yml from GitHub
+     *
+     */
+    public static function loadFromGithub() {
+
+        throw new Exception("loadFromGithub() not implemented");
     }
 
     /**
-     * Load the config from a Yaml-file
+     * Load the sitemap from a Yaml-file
      *
      * @param String $filepath
      * @return void
      */
     public static function loadFromYamlfile()
     {
-        static::$config = Yaml::parse(file_get_contents(static::$configPath));
+        throw new Exception("Sitemap::loadFromYamlfile() is deprecated, will try in constructor!");
+        static::$sitemap = Yaml::parse(file_get_contents(static::$sitemapPath));
 
-        foreach (static::$config as $key => $val) {
+        foreach (static::$sitemap as $key => $val) {
             static::addSection(new Section($key, $val['url'], $val['title'], $val));
         }
     }
@@ -49,6 +80,7 @@ class Sitemap
                 return $section;
             }
         }
+
         return false;
     }
 
@@ -62,6 +94,7 @@ class Sitemap
      */
     public static function addSection(Section $section)
     {
+        echo "Adding section ".$section->getId().". ";
         if (!static::getSection($section->getId())) {
             static::$sections[] = $section;
         }

@@ -12,7 +12,7 @@
 		{% if blog is defined %}
 			<link rel="alternate" type="application/rss+xml" href="{{blog.feed}}" title="{{blog.name}} RSS-feed" />
 		{% endif %}
-		{% embed "UKMDesign/Layout/seo.html.twig"|UKMpath %}{% endembed %}
+		{% embed "@UKMDesign/Layout/seo.html.twig"|UKMpath %}{% endembed %}
 
 		{# STYLES #}
 		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
