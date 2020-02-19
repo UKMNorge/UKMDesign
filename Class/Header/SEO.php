@@ -198,6 +198,9 @@ class SEO
      */
     public function getImage()
     {
+        if( is_null($this->image)) {
+            $this->image = new Image('');
+        }
         return $this->image;
     }
 
