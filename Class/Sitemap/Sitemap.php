@@ -5,9 +5,11 @@ namespace UKMNorge\Design\Sitemap;
 use Exception;
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
+use UKMNorge\Design\YamlLoaderInterface;
 
 class Sitemap
 {
+    const SITEMAPURL = 'https://raw.githubusercontent.com/UKMNorge/UKMDesign/master/Resources/config/sitemap.yml';
 
     static $sitemapPath;
     static $sitemap = [];
@@ -18,28 +20,49 @@ class Sitemap
      *
      * @param String $yaml_file_path
      */
-    public function __construct(String $yaml_cache_dir = null, String $yaml_install_dir)
+    public function __construct( YamlLoaderInterface $loader )
     {
-        $filename = 'sitemap.yml';
+        $loader->setFilename('sitemap.yml');
+
         try {
-            # Loading cached sitemap copied from Github. Skip warnings, handle it by checking for FALSE.
-            $yml = @file_get_contents($yaml_cache_dir.$filename);
-            if ( $yml === FALSE ) {
-                throw new Exception("Failed to load yml");
+            if( !$loader->hasCachedYaml() ) {
+                throw new Exception('Har ikke cache');
             }
-            static::$sitemap = Yaml::parse($yml);
-        } catch (Exception $e) {
-            # Loading backup sitemap from vendor install
-            $yml = @file_get_contents($yaml_install_dir.$filename);
-            if ( $yml === FALSE ) {
-                throw new Exception("Failed to load yml");
-            }
-            static::$sitemap = Yaml::parse($yml);
+            static::$sitemap = $loader->getCachedYaml();
+        } catch( Exception $e ) {
+            static::$sitemap = $loader->getInstallYaml();
         }
 
         foreach (static::$sitemap as $key => $val) {
             static::addSection(new Section($key, $val['url'], $val['title'], $val));
         }
+    }
+
+    /**
+     * Hent et oppdatert sitemap fra github.com
+     * 
+     * OBS: skal aldri gjøres runtime, men må håndteres av en cronjobb!
+     *
+     * @param Int $timeout
+     * @throws Exception hvis ting går galt
+     * @return String Yaml
+     */
+    public function getUpdatedSitemapFromGithub( Int $timeout ) {
+        $curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, static::SITEMAPURL);
+		curl_setopt($curl, CURLOPT_REFERER, $_SERVER['PHP_SELF']);
+		curl_setopt($curl, CURLOPT_USERAGENT, "UKMNorge API");
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
+		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
+		curl_setopt($curl, CURLOPT_HEADER, 0);
+
+		$result = curl_exec( $curl );
+		
+		if( !empty( $result ) ) {
+			return $result;
+		}
+		throw new Exception('Kunne ikke hente data fra Github', 1);
     }
  
     /**

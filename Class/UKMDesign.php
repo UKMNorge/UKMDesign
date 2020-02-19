@@ -47,7 +47,7 @@ class UKMDesign
     const SUPPORTED_COLOR_SCHEMES = ['default', 'cherry'];
 
 
-    public static function init( $cache_directory = null )
+    public static function init( YamlLoaderInterface $yamlLoader )
     {
 
         if (is_null(static::$config)) {
@@ -58,10 +58,7 @@ class UKMDesign
         }
 
         if (is_null(static::$sitemap)) {
-            static::$sitemap = new Sitemap(
-                $cache_directory,
-                static::getConfigPath()
-            );
+            static::$sitemap = new Sitemap( $yamlLoader );
         }
     }
 
