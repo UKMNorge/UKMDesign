@@ -4,7 +4,6 @@ namespace UKMNorge\Design\Sitemap;
 
 use Exception;
 use Symfony\Component\Yaml\Yaml;
-use Symfony\Component\Yaml\Exception\ParseException;
 use UKMNorge\Design\YamlLoaderInterface;
 
 class Sitemap
