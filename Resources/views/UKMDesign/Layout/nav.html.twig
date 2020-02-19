@@ -2,21 +2,19 @@
 	{% set section = UKMDesign.getSitemap().getSection('UKM') %}
 	<div class="col-xs-12 col-md-8 col-lg-8 section divider">
 		<div class="pageContainer row">
-			{% if menu is defined %}
-				{% set section_local = UKMDesign.getSitemap().getSection('extra') %}
-				{% if section_local %}
-					{% for page in section_local.getPages().getAll() %}
-						<div class="col-6 col-lg-4">
-							<div class="page secondary p-2 m-1 my-2 m-md-2 center autoshrink">
-								<a href="{{ page.getUrl() }}" {{ page.getTargetProperty() }} class="">
-									{{ page.getTitle() }}
-								</a>
-							</div>
-						</div>
-					{% endfor %}
-				{% endif %}
+			{% if sitemap_extras is defined %}
+                {% for page in sitemap_extras.getPages().getAll() %}
+                    <div class="col-6 col-lg-4">
+                        <div class="page secondary p-2 m-1 my-2 m-md-2 center autoshrink">
+                            <a href="{{ page.getUrl() }}" {{ page.getTargetProperty() }} class="">
+                                {{ page.getTitle() }}
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
 				<div class="clearfix"></div>
 			{% endif %}
+            
 			{% for page in section.getPages().getAll()|filter(page =>page.getId() not in ['pressebilder']) %}
 				<div class="col-6 col-lg-4">
 					<div class="page p-2 m-1 my-2 m-md-2 center">
