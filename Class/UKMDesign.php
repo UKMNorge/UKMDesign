@@ -47,19 +47,21 @@ class UKMDesign
     const SUPPORTED_COLOR_SCHEMES = ['default', 'cherry'];
 
 
-    public static function init()
+    public static function init( $cache_directory = null )
     {
+
         if (is_null(static::$config)) {
             static::$config = new Config(
                 static::getConfigPath() . 'parameters.yml'
             );
             static::$config::loadFromYamlfile();
         }
+
         if (is_null(static::$sitemap)) {
             static::$sitemap = new Sitemap(
-                static::getConfigPath() . 'sitemap.yml'
+                $cache_directory,
+                static::getConfigPath()
             );
-            static::getSitemap()::loadFromYamlfile();
         }
     }
 
@@ -299,9 +301,10 @@ class UKMDesign
     {
         if (is_null(static::$sitemap)) {
             throw new Exception(
-                'UKMDesign feil satt opp. Sitemap ikke er initialisert.'
+                'UKMDesign feil satt opp. Sitemap er ikke initialisert.'
             );
         }
+
         return static::$sitemap;
     }
 

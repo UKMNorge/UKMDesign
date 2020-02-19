@@ -1,16 +1,16 @@
-{% extends ("UKMDesign/Layout/"~ (singleMode is defined and singleMode ? 'singleMode' : 'framework' ) ~".html.twig")|UKMpath %}
+{% extends ("@UKMDesign/Layout/"~ (singleMode is defined and singleMode ? 'singleMode' : 'framework' ) ~".html.twig")|UKMpath %}
 
 {% block framework_content %}
-	{% embed "UKMDesign/Layout/header.html.twig"|UKMpath %}{% endembed %}
+	{% embed "@UKMDesign/Layout/header.html.twig"|UKMpath %}{% endembed %}
 
 	<div class="container-fluid" id="UKMDesign_sitemap" style="display:none;">
-		{#% embed "UKMDesign/Mobil/UKMMobil.html.twig"|UKMpath %}{% endembed %#}
+		{#% embed "@UKMDesign/Mobil/UKMMobil.html.twig"|UKMpath %}{% endembed %#}
 		{% block sectionNav %}{% endblock %}
-		{% embed "UKMDesign/Layout/nav.html.twig"|UKMpath with {'hidden': true} %}{% endembed %}
+		{% embed "@UKMDesign/Layout/nav.html.twig"|UKMpath with {'hidden': true} %}{% endembed %}
 	</div>
 	<div id="UKMDesign_content">
 		{% block content %}Designfil mangler content-block.{% endblock %}
 	</div>
 	
-	{% embed "UKMDesign/Layout/footer.html.twig"|UKMpath %}{% endembed %}
+	{% embed "@UKMDesign/Layout/footer.html.twig"|UKMpath %}{% endembed %} 
 {% endblock %}
