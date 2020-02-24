@@ -212,7 +212,9 @@ class SEO
      */
     public function setImage(Image $image)
     {
-        $this->image = $image;
+        if( !is_null($image)) {
+            $this->image = $image;
+        }
         return $this;
     }
 

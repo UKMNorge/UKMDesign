@@ -29,6 +29,9 @@ class Banner extends Image
      */
     public function getPosY()
     {
+        if( is_string( $this->pos_y) ) {
+            $this->pos_y = new Vertical($this->pos_y);
+        }
         return $this->pos_y;
     }
 
