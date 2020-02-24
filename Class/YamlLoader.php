@@ -16,7 +16,7 @@ class YamlLoader implements YamlLoaderInterface
 
     public function __construct(String $cache_path, String $install_path)
     {
-        $this->cache_path = rtrim($cache_path, '/') . '/';
+        $this->cache_path = empty( $cache_path ) ? false : rtrim($cache_path, '/') . '/';
         $this->install_path = rtrim($install_path, '/') . '/';
     }
 
@@ -54,6 +54,10 @@ class YamlLoader implements YamlLoaderInterface
      */
     public function hasCachedYaml()
     {
+        if( $this->cache_path === false ) {
+            return false;
+        }
+        
         if (!file_exists($this->cache_path . $this->getFilename())) {
             return false;
         }
@@ -104,7 +108,7 @@ class YamlLoader implements YamlLoaderInterface
     {
         $file_contents = @file_get_contents($full_file_path);
         if ($file_contents === false) {
-            throw new Exception('Kunne ikke lese fil');
+            throw new Exception('Kunne ikke lese fil' . $full_file_path);
         }
 
         $yaml = static::parseYaml($file_contents);
