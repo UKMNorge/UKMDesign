@@ -20,3 +20,12 @@ jQuery(document).on('click', '.geolocation', function() {
         }
     );
 });
+
+jQuery(document).on('geolocated', function(e, location) {
+    jQuery.ajax({
+        url: 'https://delta.' + window.location.hostname + '/lastlocation/' + location.kommunenummer + '/',
+        xhrFields: {
+            withCredentials: true
+        }
+    });
+});
