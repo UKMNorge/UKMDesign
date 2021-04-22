@@ -2,9 +2,29 @@
 <footer class="mt-4">
 	<div class="container">
 		<div class="col-12 center">
-			<a href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}">
-				<img src="//grafikk.ukm.no/profil/logoer/UKM_logo_bla_0300.png" id="UKMlogoFooter" width="70" />
-			</a>
+			<h4>Brødsmuler</h4>
+			<ol class="list-group">
+				<li class="list-group-item">
+					<a href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}">
+						<img src="//grafikk.ukm.no/profil/logoer/UKM_logo_bla_0300.png" id="UKMlogoFooter" width="70" />
+					</a>
+				</li>
+				{% for section in UKMDesign.getSitemap().getBreadcrumbs().getSections() %}
+					<li class="list-group-item">
+						{% if section.getPages().getCount() == 0 %}
+							<a href="{{ section.getUrl() }}">{{section.getTitle()}}</a>
+						{% else %}
+							{% for page in section.getPages().getAll() %}
+								<a href="{{page.getUrl()}}">{{page.getTitle()}}</a>
+								{{ not loop.last ? '|' }} 
+							{% endfor %}
+						{% endif %}
+					</li>
+				{% endfor %}
+				<li class="list-group-item text-success">
+					<a href="{{ UKMDesign.getSitemap().getBreadcrumbs().getPage().getUrl() }}">{{ UKMDesign.getSitemap().getBreadcrumbs().getPage().getTitle() }}</a>
+				</li>
+			</ol>
 		</div>
 	</div>
 </footer>
