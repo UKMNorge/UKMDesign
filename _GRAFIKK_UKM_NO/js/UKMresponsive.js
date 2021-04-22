@@ -298,7 +298,7 @@ $(document).on('skjulInnslag', function(e, innslag) {
     dataContainer.slideUp(
         400,
         function() {
-            dataContainer.html('<div class="center">Vennligst vent, laster inn...</div>');
+            dataContainer.html('<div class="loading m-4">Vennligst vent, laster inn...</div>');
         }
     );
     buttonContainer.fadeOut();
