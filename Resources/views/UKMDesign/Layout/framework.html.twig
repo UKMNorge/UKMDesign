@@ -21,21 +21,39 @@
 		{% block css %}{% endblock %}
 		
 		{# SCRIPTS #}
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+		<script src="//assets.{{ UKM_HOSTNAME }}/js/menu.js" ></script>
+		<script src="//assets.{{ UKM_HOSTNAME }}/js/accordion.js" ></script>
+		<script src="//assets.{{ UKM_HOSTNAME }}/js/switch.js" ></script>
+		<script src="//assets.{{ UKM_HOSTNAME }}/js/fylke.js" ></script>
+		<script src="//assets.{{ UKM_HOSTNAME }}/js/share.js" ></script>
+		
+		<script src="/wp-content/plugins/UKMresources/js/twig.js"></script>
+		<script src="//assets.{{ UKM_HOSTNAME }}/js/geolocation.js" ></script>
+
 		{% if ajax_url is defined %}
 		<script type="text/javascript">var ajaxurl = '{{ ajax_url }}';</script>
 		{% endif %}
 		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.min.js") }}?20190930-Marte"></script>
 		<script src="{{ UKMasset("swipebox/js/jquery.swipebox.js") }}"></script>
 		{% block javascripts %}{% endblock %}
-		
-		<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.10&appId={{ UKMDesign.getHeader().getSeo().getFBAppId() }}";
-		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
+	
+
+		<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+			appId            : '{{ UKMDesign.getHeader().getSeo().getFBAppId() }}',
+			autoLogAppEvents : true,
+			xfbml            : true,
+			version          : 'v10.0'
+			});
+		};
 		</script>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/nb_NO/sdk.js"></script>
+
 		<script>
 			var UKM_HOSTNAME = '{{ UKM_HOSTNAME }}';
             var blog_url = '{{ UKMDesign.getSiteUrl() }}/';
@@ -48,6 +66,7 @@
 	</body>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46216680-1"></script>
+
 	<script type="tex">
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
