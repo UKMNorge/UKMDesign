@@ -15,8 +15,7 @@
 		{% embed "UKMDesign/Layout/seo.html.twig"|UKMpath %}{% endembed %}
 
 		{# STYLES #}
-		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
-		<link href="//assets.{{ UKM_HOSTNAME }}/css/index{{ THEME is defined and THEME is not empty ? '-'~THEME }}.css?20210409-Merete" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">		<link href="//assets.{{ UKM_HOSTNAME }}/css/index{{ THEME is defined and THEME is not empty ? '-'~THEME }}.css?20210409-Merete" rel="stylesheet" />
 		<link href="{{ UKMasset("swipebox/css/swipebox.css") }}" rel="stylesheet" />
 		{% block css %}{% endblock %}
 		
