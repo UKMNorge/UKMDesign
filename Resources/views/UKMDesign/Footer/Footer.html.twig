@@ -4,7 +4,7 @@
         <div class="col col-xl-2 mt-3">
             <a href="" class="footer-ukm-logo"><img  src="//assets.{{ UKM_HOSTNAME }}/img/ukm_logo_sort.png" /></a>
         </div>
-        <div class="col-6 mt-4 d-none d-sm-block" style="margin-left: -4rem; padding-top: 0.5rem;">
+        <div class="btn-pamelding col-6 mt-4" style="margin-left: -4rem; padding-top: 0.5rem;">
             <button type="button" class="ukm-button ukm-button-front ukm-button-secondary" style="padding: 0 !important; height: auto;">
                 <span style="font: normal normal bold 20px/24px Roboto;">Start påmelding</span>
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="hsl(228, 96%, 67%)">
@@ -31,7 +31,7 @@
     </div>
 
     {# Breadcrum mobile devices #}
-    <div class="row mb-4 mt-4 d-block d-sm-none d-lg-none">
+    <div class="row mb-4 mt-4 breadcrum-small">
         <div class="col d-flex justify-content-center">
           <nav class="navbar navbar-light locationBreadcrum">
             <ul class="navbar-nav flex-row">
@@ -74,7 +74,7 @@
                         <a class="btn nav-link footerLinks" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <span class="accordSubtext">. . .</span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
                           {% for page in section.getPages().getAll() %}
                             <a class="dropdown-item" href="{{ page.getUrl() }}">
                               <span class="">{{ page.getTitle() }}</span>
@@ -94,7 +94,7 @@
     
     <div class="row mb-3">
         <div class="col d-flex justify-content-center">
-            <button type="button" class="ukm-button ukm-button-plain d-block d-sm-none d-lg-none" style="font: normal normal 600 0.875em/1.3125em Poppins !important;">
+            <button type="button" class="ukm-button ukm-button-plain link-pamelding" style="font: normal normal 600 0.875em/1.3125em Poppins !important;">
                 <span>Start påmelding</span>
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="hsl(228, 96%, 67%)">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -105,8 +105,8 @@
 
     {# Breadcrum desktop #}
     <div class="row">
-        <div class="col-12 col-md-6">
-          <nav class="navbar navbar-light locationBreadcrum d-none d-sm-block">
+        <div class="col-12 col-md-6 breadcrum-large">
+          <nav class="navbar navbar-light locationBreadcrum">
             <ul class="navbar-nav flex-row p-2">
               <li class="nav-item">
                 <a class="nav-link footerLinks"
@@ -147,7 +147,7 @@
                         <a class="btn nav-link footerLinks" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <span class="accordSubtext">. . .</span>
                         </a>
-                        <div class="dropdown-menu alternativePopup" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
                           {% for page in section.getPages().getAll() %}
                             <a class="dropdown-item" href="{{ page.getUrl() }}">
                               <span class="">{{ page.getTitle() }}</span>
@@ -164,8 +164,8 @@
         </div>
         <div class="col-12 col-md-6">
             <div id="accordion1">
-                <a class="button-tint" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseFooter1 multiCollapseFooter2" ></a>
-                <button class="btn btn-primary dropdown-toggle mainAccordText">
+                {# <a class="button-tint" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseFooter1 multiCollapseFooter2" ></a> #}
+                <button class="btn btn-primary dropdown-toggle mainAccordText" role="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseFooter1 multiCollapseFooter2">
                     <svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);"><path d="M9 19L17 12 9 5z"></path></svg>
                     <span class="accordSubtext">Dette er UKM</span>
                 </button>
@@ -208,7 +208,7 @@
             <h4 class="line line-long" style="margin-bottom: 14px;"></h4>
         </div>
     </div>
-    <div class="row ">
+    <div class="row pb-4">
         <div class="col d-flex justify-content-center">
             <span class="" style="font: normal normal normal 12px/14px Roboto; color: hsla(222, 18%, 43%, 1);">Copyright © 2021 UKM Norge</span>
         </div>
