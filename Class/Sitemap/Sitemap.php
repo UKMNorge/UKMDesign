@@ -13,22 +13,23 @@ class Sitemap
     static $sitemapPath;
     static $sitemap = [];
     static $sections = [];
+    static $breadcrumbs;
 
     /**
      * Set a new yaml file path for siteMap
      *
      * @param String $yaml_file_path
      */
-    public function __construct( YamlLoaderInterface $loader )
+    public function __construct(YamlLoaderInterface $loader)
     {
         $loader->setFilename('sitemap.yml');
 
         try {
-            if( !$loader->hasCachedYaml() ) {
+            if (!$loader->hasCachedYaml()) {
                 throw new Exception('Har ikke cache');
             }
             static::$sitemap = $loader->getCachedYaml();
-        } catch( Exception $e ) {
+        } catch (Exception $e) {
             static::$sitemap = $loader->getInstallYaml();
         }
 
@@ -46,29 +47,31 @@ class Sitemap
      * @throws Exception hvis ting går galt
      * @return String Yaml
      */
-    public function getUpdatedSitemapFromGithub( Int $timeout ) {
+    public function getUpdatedSitemapFromGithub(Int $timeout)
+    {
         $curl = curl_init();
-		curl_setopt($curl, CURLOPT_URL, static::SITEMAPURL);
-		curl_setopt($curl, CURLOPT_REFERER, $_SERVER['PHP_SELF']);
-		curl_setopt($curl, CURLOPT_USERAGENT, "UKMNorge API");
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
-		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
-		curl_setopt($curl, CURLOPT_HEADER, 0);
+        curl_setopt($curl, CURLOPT_URL, static::SITEMAPURL);
+        curl_setopt($curl, CURLOPT_REFERER, $_SERVER['PHP_SELF']);
+        curl_setopt($curl, CURLOPT_USERAGENT, "UKMNorge API");
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
+        curl_setopt($curl, CURLOPT_HEADER, 0);
 
-		$result = curl_exec( $curl );
-		
-		if( !empty( $result ) ) {
-			return $result;
-		}
-		throw new Exception('Kunne ikke hente data fra Github', 1);
+        $result = curl_exec($curl);
+
+        if (!empty($result)) {
+            return $result;
+        }
+        throw new Exception('Kunne ikke hente data fra Github', 1);
     }
- 
+
     /**
      * Loads a new Sitemap.yml from GitHub
      *
      */
-    public static function loadFromGithub() {
+    public static function loadFromGithub()
+    {
 
         throw new Exception("loadFromGithub() not implemented");
     }
@@ -130,6 +133,19 @@ class Sitemap
     public static function getSections()
     {
         return static::$sections;
+    }
+
+    /**
+     * Get a breadcrumbs object
+     * 
+     * @return Breadcrumbs
+     */
+    public static function getBreadCrumbs()
+    {
+        if (is_null(static::$breadcrumbs)) {
+            static::$breadcrumbs = new Breadcrumbs();
+        }
+        return static::$breadcrumbs;
     }
 
     /**
