@@ -36,16 +36,6 @@ class Pages
     }
 
     /**
-     * Get the number of pages
-     *
-     * @return Int
-     */
-    public function getCount(): Int
-    {
-        return sizeof($this->getAll());
-    }
-
-    /**
      * Get one page from this collection
      *
      * @param String $id

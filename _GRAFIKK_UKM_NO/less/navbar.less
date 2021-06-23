@@ -1,0 +1,96 @@
+/* FILE: navbar.less */
+/*#main_menu_button {
+    margin: 7px 0px 0px 0px;
+}
+*/
+.navbar-header {
+	padding-top: 0.5rem;
+	padding-bottom: 0rem;
+	margin-bottom: 0rem;
+}
+
+.navbar-separator {
+	margin-bottom: 1rem;
+	border-bottom: 5px solid @color-primary;
+}
+
+#UKMslogan {
+	color: #ffffff;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+@media (min-width: 992px) {
+	#UKMslogan_container {
+		margin-top: -3rem;
+	}
+}
+
+@media( min-width: 1200px) {
+	#UKMslogan {
+	    padding-bottom: 3.5rem;
+	    padding-top: 3.5rem;
+	    font-size: 3rem;
+	}
+}
+
+#UKMslogan {
+/*	background: rgba(255,255,255,0.4);*/
+}
+
+#UKMlogo {
+    width: 3.8em;
+    margin-top: -0.1em;
+}
+
+.navbar-separator #skygge{
+	height: 15vh;
+	float: right;
+	margin-top: -15vh;
+	margin-right: 4vw;
+}
+
+
+
+#UKMheader {
+	background: #fff;
+	position: relative;
+}
+/* WILL BE OVERWRITTEN BY THEME FILE */
+
+#UKMheader.navbar-with-slogan {
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+}
+
+
+/* IMPROVED CSS 2018 */
+#UKMheader.background {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	min-height: 30vh;
+}
+
+#UKMheader.background.top {
+	background-position-y: top;
+}
+
+#UKMheader.background #main_menu_button {
+	background: rgba(255, 255, 255, 0.44);
+}
+
+#UKMheader .sectionTitle {
+	font-size: 1.5em;
+	font-weight: 100;
+	color: @color-primary;
+	padding-top: 0.75rem;
+}
+#UKMheader.background .sectionTitle {
+	position: absolute;
+	bottom: .5em;
+}
+#UKMheader.background .sectionTitle > a {
+	color: #fff;
+}
