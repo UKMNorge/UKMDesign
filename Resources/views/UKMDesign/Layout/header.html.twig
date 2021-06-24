@@ -1,0 +1,54 @@
+{% block navbar %}
+	<div class="container-fluid {{ UKMDesign.getHeader().hasBanner() ? 'background' }}" id="UKMheader" style="{{ UKMDesign.getHeader().hasBanner() ? UKMDesign.getHeader().getBanner().getBackgroundStyle() }}">
+		{% if UKMDesign.getHeader().hasBanner() and UKMDesign.getHeader().getBanner().hasLarge() %}
+			<style>
+				@media (min-width: 992px) {
+					#UKMheader {
+						background-image: url('{{ UKMDesign.getHeader().getBanner().getLarge().getUrl() }}') !important;
+					}
+				}
+			</style>
+		{% endif %}
+		<header>
+			<div class="float-right">
+				<a href="//{{ UKM_HOSTNAME }}/hovedmeny/">
+					<button type="button" class="btn btn-sm my-2 btn-outline-{{ UKMDesign.getHeader().getButtonClass() }} " style="{{ UKMDesign.getHeader().getButtonBackground() }}" id="main_menu_button" data-status="hidden">MENY</button>
+				</a>
+			</div>
+		
+			{# BRAND ICON #}
+			<div class="navbar-header float-left">
+				{% if UKMDesign.getHeader().getLogo().visible() %}
+					<a href="{{ UKMDesign.getSitemap().getPage('UKM', 'forsiden') }}">
+						<img src="{{ UKMDesign.getHeader().getLogo() }}" id="UKMlogo" />
+					</a>
+				{% endif %}
+			</div>
+			
+			{% if not UKMDesign.getHeader().hasBanner() and UKMDesign.getHeader().visibleSectionTitle() %}
+				<div class="sectionTitle center">
+					<a href="{{ UKMDesign.getCurrentSection().getUrl() }}">{{ UKMDesign.getCurrentSection().getTitle() }}</a>
+				</div>
+			{% endif %}
+	
+			<div class="clearfix"></div>
+		</header>
+		{% if UKMDesign.getHeader().hasSlogan() %}
+			<div class="container" id="UKMslogan_container">
+				<div class="row">
+					<div class="col-12">
+				    	<p class="lead center" id="UKMslogan">{{ UKMDesign.getHeader().getSlogan() }}</p>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		{% if UKMDesign.getHeader().hasBanner() and UKMDesign.getHeader().visibleSectionTitle() %}
+			<div class="sectionTitle bottom">
+				<a href="{{ UKMDesign.getCurrentSection().getUrl() }}">{{ UKMDesign.getCurrentSection().getTitle() }}</a>
+			</div>
+		{% endif %}
+
+	</div>
+	
+	<div class="navbar-separator" id="UKMheader_separator"></div>
+{% endblock %}	

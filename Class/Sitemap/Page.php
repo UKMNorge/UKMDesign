@@ -29,25 +29,6 @@ class Page
     }
 
     /**
-     * Create page object
-     *
-     * @param String $url
-     * @param String $title
-     * @param String|Int $id
-     * @return Page
-     */
-    public static function create(String $url, String $title, $id = null)
-    {
-        return new static(
-            [
-                'url' => $url,
-                'title' => $title,
-                'id' => $id
-            ]
-        );
-    }
-
-    /**
      * Get the ID-string
      *
      * @return String id (from yaml)
