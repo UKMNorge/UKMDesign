@@ -1,45 +1,49 @@
 {% extends ("UKMDesign/Layout/"~ (singleMode is defined and singleMode ? 'singleMode' : 'framework' ) ~".html.twig")|UKMpath %}
 
 {% block framework_content %}
-	<div id="UKMDesign_content">
-		<div class="hamburger-overlay show"></div>
-		{# GEOLOCATION TOP #}
-		{% include "UKMDesign/Layout/geolocation.html.twig" %}
+    <div id="UKMDesign_content">
+        <div class="hamburger-overlay show"></div>
+        {# GEOLOCATION TOP #}
+        {% include "UKMDesign/Layout/geolocation.html.twig" %}
 
-		{# HEADER #}
-		<header>
-			{% if showHero is defined and showHero %}
-				<div class="ukm-bolge ukm-bolge-front">
-					<div class="div-radius div-radius-tint"></div>
-					<div class="div-radius"></div>
-					<nav class="navbar ukm-navbar">
-						<a class="navbar-brand clickable" href="//{{ UKM_HOSTNAME }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_hvit.png"/></a>
-						{% include "UKMDesign/Layout/nav.html.twig" %}
-					</nav>
-					<div class="container hero-container">
-						<div class="row">
-							<div class="col-12 col-sm-10 offset-sm-1">
-								{% block hero %}{% endblock %}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 col-sm-10 offset-sm-1">
-								{% block hero_cta %}{% endblock %}
-							</div>
-						</div>
-					</div>
-				</div>
-			{% else %}
-				<nav class="navbar ukm-navbar other-page">
-					<a class="navbar-brand clickable" href="/"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
-					{% include "UKMDesign/Layout/nav.html.twig" %}
-				</nav>
-			{% endif %}
-		</header>
-		{% block sectionNav %}{% endblock %}
-		{% block content %}Designfil mangler content-block.
-		{% endblock %}
-	</div>
+        {# HEADER #}
+        <header>
+            {% if showHero is defined and showHero %}
+                <div class="ukm-bolge ukm-bolge-front">
+                    <div class="div-radius div-radius-tint"></div>
+                    <div class="div-radius"></div>
+                    <div class="container">
+                        <nav class="navbar ukm-navbar">
+                            <a class="navbar-brand clickable" href="//{{ UKM_HOSTNAME }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_hvit.png"/></a>
+                            {% include "UKMDesign/Layout/nav.html.twig" %}
+                        </nav>
+                    </div>
+                    <div class="container hero-container">
+                        <div class="row">
+                            <div class="col-12 col-sm-10 offset-sm-1">
+                                {% block hero %}{% endblock %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-10 offset-sm-1">
+                                {% block hero_cta %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <nav class="navbar ukm-navbar other-page">
+                    <div class="container">
+                        <a class="navbar-brand clickable" href="//{{ UKM_HOSTNAME }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
+                        {% include "UKMDesign/Layout/nav.html.twig" %}
+                    </nav>
+                </div>
+            {% endif %}
+        </header>
+        {% block sectionNav %}{% endblock %}
+        {% block content %}Designfil mangler content-block.
+        {% endblock %}
+    </div>
 
-	{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}
+    {% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}
 {% endblock %}
