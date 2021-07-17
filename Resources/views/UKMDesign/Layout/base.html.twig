@@ -13,8 +13,8 @@
                     <div class="div-radius div-radius-tint"></div>
                     <div class="div-radius"></div>
                     <div class="container">
-                        <nav class="navbar ukm-navbar">
-                            <a class="navbar-brand clickable" href="//{{ UKM_HOSTNAME }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_hvit.png"/></a>
+                        <nav class="navbar navbar-expand-lg ukm-navbar">
+                            <a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_hvit.png"/></a>
                             {% include "UKMDesign/Layout/nav.html.twig" %}
                         </nav>
                     </div>
@@ -34,7 +34,7 @@
             {% else %}
                 <nav class="navbar ukm-navbar other-page">
                     <div class="container">
-                        <a class="navbar-brand clickable" href="//{{ UKM_HOSTNAME }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
+                        <a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
                         {% include "UKMDesign/Layout/nav.html.twig" %}
                     </nav>
                 </div>
