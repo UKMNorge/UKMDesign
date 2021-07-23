@@ -96,7 +96,7 @@ ukm:
 
 ukmhvorfor:
     url: //ukm.no/
-    title: UKM
+    title: Hvorfor har vi UKM
     #color: d4c8e4
     scheme: 'default'
     pages:
@@ -123,7 +123,7 @@ ukmhvorfor:
 
 samarbeid:
     url: //ukm.no/
-    title: UKM
+    title: I samarbeid med andre 
     #color: d4c8e4
     scheme: 'default'
     pages:
@@ -141,7 +141,7 @@ samarbeid:
 
 prosjekter:
     url: //ukm.no/
-    title: UKM
+    title: Digitale satsninger
     #color: d4c8e4
     scheme: 'default'
     pages:
@@ -169,7 +169,7 @@ prosjekter:
 
 metodikk:
     url: //ukm.no/
-    title: UKM
+    title: Medvirkning
     #color: d4c8e4
     scheme: 'default'
     pages:
@@ -192,7 +192,7 @@ metodikk:
 
 vibakukm:
     url: //bak.ukm.no/
-    title: Vi bak UKM
+    title: Organisasjon og historikk
     #color: d4c8e4
     scheme: 'default'
     pages:
