@@ -162,18 +162,18 @@
 			</div>
 			<div class="col-12 col-md-6">
 				{% set ukm = UKMDesign.getSitemap().getSection('ukm') %}
-				<div id="ukm">
-					<button class="btn btn-primary dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="ukm">
-						<svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
+				{# <div id="ukm"> #}
+					<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#ukm" aria-expanded="false" aria-controls="ukm">
+						<svg id="caret-flip-ukm" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
 							<path d="M9 19L17 12 9 5z"></path>
 						</svg>
 						<span class="accordSubtext">{{ ukm.getTitle() }}</span>
 					</button>
 					{% for page in ukm.getPages().getAll() %}
-						{% set name = {'name': page.getTitle(), 'link': page.getUrl()} %}
-						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with name %}
+						{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': 'ukm'} %}
+						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
 					{% endfor %}
-				</div>
+				{# </div> #}
 			</div>
 		</div>
 
@@ -187,16 +187,16 @@
 				{% set array = ['ukmhvorfor','samarbeid','prosjekter'] %}
 				{% for name in array %}
 					{% set section = UKMDesign.getSitemap().getSection(name) %}
-					<div id="{{ name }}" class="mb-3">
-					<button class="btn btn-primary dropdown-toggle accordSubbutton" role="button" data-toggle="collapse" data-target=".{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
+					<div {#id="{{ name }}"#} class="mb-3">
+					<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
 						<svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
 							<path d="M9 19L17 12 9 5z"></path>
 						</svg>
-						<span class="accordSubtext">{{ section.getTitle() }}</span>
+						<span>{{ section.getTitle() }}</span>
 					</button>
 					{% for page in section.getPages().getAll() %}
-						{% set name = {'name': page.getTitle(), 'link': page.getUrl()} %}
-						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with name %}
+						{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': name} %}
+						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
 					{% endfor %}
 					</div>
 				{% endfor %}
@@ -206,16 +206,16 @@
 				{% set array = ['metodikk','vibakukm','personvern'] %}
 				{% for name in array %}
 					{% set section = UKMDesign.getSitemap().getSection(name) %}
-					<div id="{{ name }}" class="mb-3">
-					<button class="btn btn-primary dropdown-toggle accordSubbutton" role="button" data-toggle="collapse" data-target=".{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
+					<div {#id="{{ name }}"#} class="mb-3">
+					<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
 						<svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
 							<path d="M9 19L17 12 9 5z"></path>
 						</svg>
-						<span class="accordSubtext">{{ section.getTitle() }}</span>
+						<span>{{ section.getTitle() }}</span>
 					</button>
 					{% for page in section.getPages().getAll() %}
-						{% set name = {'name': page.getTitle(), 'link': page.getUrl()} %}
-						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with name %}
+						{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': name} %}
+						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
 					{% endfor %}
 					</div>
 				{% endfor %}
