@@ -10,32 +10,25 @@ UKM:
             title: Forsiden
             description: Ung kultur møtes
         -
-            # Fra gammel meny
             id: derdubor
             url: //ukm.no/derdubor/
             title: Der du bor
         - 
-            id: login
-            url: //ukm.no/wp-login.php/
-            title: logg inn
-            description: Logg inn som lokalkontakt
+            id: redaksjonelt
+            url: //liker.ukm.no/
+            title: Nyheter
+            description:
         - 
             id: festivalen
             url: //festivalen.ukm.no/
             title: festivalen
             description: Alt om UKM-festivalen
-        - 
-            id: redaksjonelt
-            url: //liker.ukm.no/
-            title: Nyheter
-            description: 
 #        - 
 #            id: ukmere
 #            url: //ukm.no/blog/category/kjente-ukmere/
 #            title: Kjente UKMere
 #            description: 
         - 
-            # Fra gammel meny
             id: pressebilder
             url: //www.flickr.com/photos/ukm/albums
             title: UKM på flickr
@@ -46,211 +39,11 @@ UKM:
 #            title: Arkiv
 #            description: Bli kjent med oss
         -
-            # Fra gammel meny
             id: deltalogin
             url: //delta.ukm.no/
             title: Din side
             description: Endre din påmelding
 
-
-navbar: 
-    url: //ukm.no/wp-login.php/
-    title: logg inn
-    description: Logg inn som lokalkontakt
-    #color: d4c8e4
-    scheme: 'default'
-    pages:
-        -
-            id: festivalen
-            url: //festivalen.ukm.no/
-            title: UKM-festivalen
-            description: Alt om UKM-festivalen
-        - 
-            id: redaksjonelt
-            url: //liker.ukm.no/
-            title: Nyheter
-            description: 
-                              
-
-ukm:
-    url: //ukm.no/hva-er/
-    title: Dette er UKM
-    #color: d4c8e4
-    scheme: 'default'
-    pages:
-        - 
-            id: hvaerukm
-            url: //ukm.no/hva-er/
-            title: Hva er UKM?
-            description: Hva skjer på UKM
-        -
-            id: hvorforukm 
-            url: //ukm.no/hvorfor/
-            title: Hvorfor delta?
-            description: Er UKM for meg
-        -
-            id: some
-            url: //ukm.no/some/
-            title: Finn oss på some
-            description:   
-
-ukmhvorfor:
-    url: //ukm.no/
-    title: Hvorfor har vi UKM
-    #color: d4c8e4
-    scheme: 'default'
-    pages:
-        - 
-            id: utenforskap
-            url: //bak.ukm.no/hvorfor/utenforskap/
-            title: Utenforskap
-            description: 
-        -
-            id: talentutvikling
-            url: //bak.ukm.no/hvorfor/talentfabrikk/
-            title: Talentutvikling
-            description: Er UKM for meg
-        -
-            id: folkehelse
-            url: //bak.ukm.no/hvorfor/folkehelse/
-            title: Folkehelse
-            description:  
-        -
-            id: samfunnsutvikling
-            url: //bak.ukm.no/hvorfor/samfunnsutvikling/
-            title: Samfunnsutvikling
-            description:  
-
-samarbeid:
-    url: //ukm.no/
-    title: I samarbeid med andre 
-    #color: d4c8e4
-    scheme: 'default'
-    pages:
-        -
-            id: partnere
-            url: //bak.ukm.no/samarbeidspartnere/
-            title: Partnere
-            description: Er UKM for meg
-        -
-            id: intensjonsavtale
-            url: //bak.ukm.no/samarbeidspartnere/intensjonsavtalen/
-            title: Bli partner
-            description:  
-
-
-prosjekter:
-    url: //ukm.no/
-    title: Digitale satsninger
-    #color: d4c8e4
-    scheme: 'default'
-    pages:
-        -
-            id: norcup
-            url: //bak.ukm.no/prosjekter/norcup/
-            title: Norgescupen
-            description:
-        -
-            id: stimuleringsmidler
-            url: //bak.ukm.no/prosjekter/stimuleringsmidler/
-            title: Stimuleringsmidler
-            description:  
-        -
-            id: festivalen
-            url: //bak.ukm.no/prosjekter/festivalen/
-            title: Festivalen
-            description:  
-        -
-            id: moteplassdatakultur
-            url: //bak.ukm.no/prosjekter/moteplass-datakultur/
-            title: Møteplass datakultur
-            description: 
-
-
-metodikk:
-    url: //ukm.no/
-    title: Medvirkning
-    #color: d4c8e4
-    scheme: 'default'
-    pages:
-        - 
-            id: medvirkning
-            url: //bak.ukm.no/metodikk/medvirkning/
-            title: Medvirkning
-            description: 
-        -
-            id: samarbeid
-            url: //bak.ukm.no/metodikk/samarbeid/
-            title: Samarbeid
-            description:
-        -
-            id: lokalforankring
-            url: //bak.ukm.no/metodikk/lokal-forankring/
-            title: Lokal forankring
-            description:  
-
-
-vibakukm:
-    url: //bak.ukm.no/
-    title: Organisasjon og historikk
-    #color: d4c8e4
-    scheme: 'default'
-    pages:
-        - 
-            id: hvaerukm
-            url: //bak.ukm.no/hva-er/
-            title: Hva er UKM?
-            description: Hva skjer på UKM
-        - 
-            id: blogg
-            url: //bak.ukm.no/nyheter/
-            title: Blogg
-            description: Meninger
-        -
-            id: historikk
-            url: //bak.ukm.no/historien/
-            title: Historikk
-            description:
-        -
-            id: kontakt
-            url: //bak.ukm.no/kontakt/
-            title: Kontaktinformasjon
-            description:  
-        -
-            id: grafikk
-            url: //bak.ukm.no/grafisk-profil/
-            title: Logoer og grafisk
-            description:  
-
-
-personvern:
-    url: //personvern.ukm.no/
-    title: Personvernpolitikk
-    scheme: 'default'
-    pages:
-        - 
-            id: pamelding
-            url: //personvern.ukm.no/pamelding/
-            title: Informasjon ved påmelding
-            description:
-        -
-            id: datalagring
-            url: //personvern.ukm.no/datalagring/
-            title: Datalagring
-            description:
-        -
-            id: informasjonskapsler
-            url: //personvern.ukm.no/informasjonskapsler/
-            title: Informasjonskapsler
-            description:  
-        -
-            id: dokumentasjon
-            url: //personvern.ukm.no/dokumentasjon/
-            title: Alt om vår dokumentasjon
-            description:  
-
-
-# v Fra gammel meny
 egoego:
     url: //liker.ukm.no/
     title: Redaksjonelt
@@ -271,7 +64,7 @@ egoego:
 #            url: //liker.ukm.no/kontakt/
 #            title: Kontakt oss
 
-# v Fra gammel meny
+
 organisasjonen:
     url: //org.ukm.no/
     title: Organisasjonen
@@ -336,7 +129,7 @@ organisasjonen:
             url: //org.ukm.no/vilkar/
             title: Vilkår for bruk av innhold
 
-            
+
 ukmtv:
     url: //tv.ukm.no
     title: UKM-TV
@@ -363,7 +156,6 @@ ukmtv:
             url: //tv.ukm.no/info/
             title: Infovideoer
 
-# v Fra gammel meny
 arrangorer:
     url: //ukm.no/wp-login.php
     title: UKM-arrangører
