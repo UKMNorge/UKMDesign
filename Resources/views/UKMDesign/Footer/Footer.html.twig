@@ -9,10 +9,10 @@
 			</div>
 			<div class="btn-pamelding col-6 mt-4" style="margin-left: -4rem; padding-top: 0.5rem;">
 				<a type="button" href="/fylker/" class="ukm-button ukm-button-front ukm-button-secondary" style="padding: 0 !important; height: auto;">
-					<span style="normal normal 500 20px/24px Roboto">Start påmelding</span>
-					<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)">
-						<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-					</svg>
+					<span style="normal normal 500 20px/24px Roboto">Start påmelding
+						{% include "UKMDesign/SVG/ChevronBlue.html.twig"%}
+
+					</span>
 				</a>
 			</div>
 
@@ -34,65 +34,7 @@
 		</div>
 
 		{# Breadcrum mobile devices #}
-		<div class="row mb-4 mt-4 breadcrum-small">
-			<div class="col d-flex justify-content-center">
-				<nav class="navbar navbar-light locationBreadcrum">
-					<ul class="navbar-nav flex-row">
-						<li class="nav-item">
-							<a class="nav-link footerLinks" href="{{ UKMDesign.getSitemap().getPage('UKM', 'forsiden') }}">
-								<svg class="" xmlns="http://www.w3.org/2000/svg" viewbox="0 1 24 24" style="margin-right: .3rem; width: 1rem; fill:hsla(228, 96%, 66%, 1);">
-									<path d="M21.743,12.331l-9-10c-0.379-0.422-1.107-0.422-1.486,0l-9,10c-0.265,0.293-0.331,0.715-0.17,1.076 C2.247,13.768,2.605,14,3,14h2v7c0,0.552,0.447,1,1,1h3c0.553,0,1-0.448,1-1v-4h4v4c0,0.552,0.447,1,1,1h3c0.553,0,1-0.448,1-1v-7h2 c0.395,0,0.753-0.232,0.913-0.593C22.074,13.046,22.008,12.625,21.743,12.331z"></path>
-								</svg>
-								<span class="accordSubtext">UKM</span>
-								<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
-									<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-								</svg>
-							</a>
-						</li>
-						{% for section in UKMDesign.getSitemap().getBreadcrumbs().getSections() %}
-							{% if section.getPages().getCount() == 0 %}
-								<li class="nav-item">
-									<a class="nav-link footerLinks" href="{{ section.getUrl() }}">
-										<span class="accordSubtext">{{ section.getTitle() }}</span>
-										<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
-											<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-										</svg>
-									</a>
-								</li>
-							{% else %}
-								{% if section.getPages().getAll()|length < 2 %}
-									{% set pagen = section.getPages().getAll()|first %}
-									<li class="nav-item">
-										<a class="nav-link footerLinks" href="{{ pagen.getUrl() }}">
-											<span class="accordSubtext">{{ pagen.getTitle() }}</span>
-											<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
-												<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-											</svg>
-										</a>
-									</li>
-								{% else %}
-									<li class="nav-item">
-										<div class="dropdown">
-											<a class="btn nav-link footerLinks" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<span class="accordSubtext">. . .</span>
-											</a>
-											<div class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
-												{% for page in section.getPages().getAll() %}
-													<a class="dropdown-item" href="{{ page.getUrl() }}">
-														<span class="">{{ page.getTitle() }}</span>
-													</a>
-												{% endfor %}
-											</div>
-										</div>
-									</li>
-								{% endif %}
-							{% endif %}
-						{% endfor %}
-					</ul>
-				</nav>
-			</div>
-		</div>
-
+		{% include "UKMDesign/Breadcrumbs/Breadcrumbs.html.twig" %}
 
 		<div class="row mb-3">
 			<div class="col d-flex justify-content-center">
@@ -106,77 +48,7 @@
 		</div>
 
 		{# Breadcrum desktop #}
-		<div class="row">
-			<div class="col-12 col-md-6 breadcrum-large">
-				<nav class="navbar navbar-light locationBreadcrum">
-					<ul class="navbar-nav flex-row p-2">
-						<li class="nav-item">
-							<a class="nav-link footerLinks" href="{{ UKMDesign.getSitemap().getPage('UKM', 'forsiden') }}">
-								<svg class="" xmlns="http://www.w3.org/2000/svg" viewbox="0 1 24 24" style="margin-right: .3rem; width: 1rem; fill:hsla(228, 96%, 66%, 1);">
-									<path d="M21.743,12.331l-9-10c-0.379-0.422-1.107-0.422-1.486,0l-9,10c-0.265,0.293-0.331,0.715-0.17,1.076 C2.247,13.768,2.605,14,3,14h2v7c0,0.552,0.447,1,1,1h3c0.553,0,1-0.448,1-1v-4h4v4c0,0.552,0.447,1,1,1h3c0.553,0,1-0.448,1-1v-7h2 c0.395,0,0.753-0.232,0.913-0.593C22.074,13.046,22.008,12.625,21.743,12.331z"></path>
-								</svg>
-								<span class="accordSubtext">UKM</span>
-								<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
-									<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-								</svg>
-							</a>
-						</li>
-						{% for section in UKMDesign.getSitemap().getBreadcrumbs().getSections() %}
-							{% if section.getPages().getCount() == 0 %}
-								<li class="nav-item">
-									<a class="nav-link footerLinks" href="{{ section.getUrl() }}">
-										<span class="accordSubtext">{{ section.getTitle() }}</span>
-										<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
-											<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-										</svg>
-									</a>
-								</li>
-							{% else %}
-								{% if section.getPages().getAll()|length < 2 %}
-									{% set pagen = section.getPages().getAll()|first %}
-									<li class="nav-item">
-										<a class="nav-link footerLinks" href="{{ pagen.getUrl() }}">
-											<span class="accordSubtext">{{ pagen.getTitle() }}</span>
-											<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
-												<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-											</svg>
-										</a>
-									</li>
-								{% else %}
-									<li class="nav-item">
-										<div class="dropdown">
-											<a class="btn nav-link footerLinks" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<span class="accordSubtext">. . .</span>
-											</a>
-											<div class="dropdown-menu position-absolute" aria-labelledby="dropdownMenuLink">
-												{% for page in section.getPages().getAll() %}
-													<a class="dropdown-item" href="{{ page.getUrl() }}">
-														<span class="">{{ page.getTitle() }}</span>
-													</a>
-												{% endfor %}
-											</div>
-										</div>
-									</li>
-								{% endif %}
-							{% endif %}
-						{% endfor %}
-					</ul>
-				</nav>
-			</div>
-			<div class="col-12 col-md-6">
-				{% set ukm = UKMDesign.getSitemap().getSection('ukm') %}
-					<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#ukm" aria-expanded="false" aria-controls="ukm">
-						<svg id="caret-flip-ukm" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
-							<path d="M9 19L17 12 9 5z"></path>
-						</svg>
-						<span class="accordSubtext">{{ ukm.getTitle() }}</span>
-					</button>
-					{% for page in ukm.getPages().getAll() %}
-						{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': 'ukm'} %}
-						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
-					{% endfor %}
-			</div>
-		</div>
+		{% include "UKMDesign/Breadcrumbs/Breadcrumbs-desktop.html.twig" %}
 
 		<div class="row mt-4">
 			<div class="col">
@@ -189,16 +61,16 @@
 				{% for name in array %}
 					{% set section = UKMDesign.getSitemap().getSection(name) %}
 					<div class="mb-3">
-					<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
-						<svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
-							<path d="M9 19L17 12 9 5z"></path>
-						</svg>
-						<span>{{ section.getTitle() }}</span>
-					</button>
-					{% for page in section.getPages().getAll() %}
-						{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': name} %}
-						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
-					{% endfor %}
+						<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
+							<svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
+								<path d="M9 19L17 12 9 5z"></path>
+							</svg>
+							<span>{{ section.getTitle() }}</span>
+						</button>
+						{% for page in section.getPages().getAll() %}
+							{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': name} %}
+							{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
+						{% endfor %}
 					</div>
 				{% endfor %}
 			</div>
@@ -208,16 +80,16 @@
 				{% for name in array %}
 					{% set section = UKMDesign.getSitemap().getSection(name) %}
 					<div class="mb-3">
-					<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
-						<svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
-							<path d="M9 19L17 12 9 5z"></path>
-						</svg>
-						<span>{{ section.getTitle() }}</span>
-					</button>
-					{% for page in section.getPages().getAll() %}
-						{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': name} %}
-						{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
-					{% endfor %}
+						<button class="btn dropdown-toggle mainAccordText accordSubbutton" role="button" data-toggle="collapse" data-target="#{{ name }}" aria-expanded="false" aria-controls="{{ name }}">
+							<svg id="caret-flip" class="caret-flip" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="margin-right: .3rem; fill:hsla(228, 96%, 67%, 1);">
+								<path d="M9 19L17 12 9 5z"></path>
+							</svg>
+							<span>{{ section.getTitle() }}</span>
+						</button>
+						{% for page in section.getPages().getAll() %}
+							{% set namespace = {'name': page.getTitle(), 'link': page.getUrl(), 'id': name} %}
+							{% include "UKMDesign/Footer/AccordionCollapseItem.html.twig" with namespace %}
+						{% endfor %}
 					</div>
 				{% endfor %}
 			</div>
@@ -238,7 +110,8 @@
 		</div>
 		<div class="row pb-4">
 			<div class="col d-flex justify-content-center">
-				<span class="" style="font: normal normal normal 12px/14px Roboto; color: hsla(222, 18%, 43%, 1);">Copyright © 2021 UKM Norge</span>
+				<a class="" href="https://bak.ukm.no/vilkar	" style="font: normal normal normal 12px/14px Roboto; color: hsla(222, 18%, 43%, 1);">Vilkår for bruk av innhold
+										 © 2021 UKM Norge</a>
 			</div>
 		</div>
 	</div>

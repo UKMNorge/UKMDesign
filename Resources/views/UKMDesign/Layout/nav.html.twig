@@ -1,12 +1,12 @@
 <ul class="nav nav-pills align-items-center">
 	{% for section in UKMDesign.getSitemap().getSections()|filter( section => section.getId() in 'navbar') %}
 		<li class="nav-item active">
-			<a class="nav-link menu-links" href="{{ section.getUrl() }}">{{ section.getTitle() }}</a>
+			<a class="nav-link menu-links" href="{{ section.getUrl() }}"><span>{{ section.getTitle() }}</span></a>
 		</li>
 		<div class="nav-hide collapse navbar-collapse">
 			{% for page in section.getPages().getAll() %}
 				<li class="nav-item active">
-					<a class="nav-link menu-links" href="{{ page.getUrl() }}">{{ page.getTitle() }}</a>
+					<a class="nav-link menu-links" href="{{ page.getUrl() }}"><span>{{ page.getTitle() }}</span></a>
 				</li>
 			{% endfor %}
 		</div>
