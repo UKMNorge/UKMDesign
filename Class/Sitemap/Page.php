@@ -9,6 +9,7 @@ class Page
     var $title = null;
     var $description = null;
     var $target = false;
+    var $svg = null;
 
     /**
      * Create new page element
@@ -25,6 +26,9 @@ class Page
         }
         if (isset($data['target'])) {
             $this->target = $data['target'];
+        }
+        if (isset($data['svg'])) {
+            $this->svg = $data['svg'];
         }
     }
 
@@ -89,6 +93,16 @@ class Page
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Get the page svg (if given)
+     *
+     * @return String|null
+     */
+    public function getSvg()
+    {
+        return $this->svg;
     }
 
     /**
