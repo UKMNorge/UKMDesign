@@ -202,7 +202,7 @@ vibakukm:
         - 
             id: hvaerukm
             url: //bak.ukm.no/hva-er/
-            title: Hva er UKM?
+            title: Om UKM
             description: Hva skjer på UKM
             svg: <svg class="icon-some" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="hsla(222, 18%, 43%, 1)"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z" /></svg>
         - 
@@ -359,15 +359,18 @@ ukmtv:
             id: festival
             url: //tv.ukm.no/festivalen/
             title: UKM-festivalen
+            svg: <svg class="icon-some" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="fill:hsla(222, 18%, 43%, 1);"><path d="M21.947,9.179c-0.129-0.378-0.47-0.645-0.868-0.676L15.378,8.05l-2.467-5.461C12.75,2.23,12.393,2,12,2 s-0.75,0.23-0.911,0.588L8.622,8.05L2.921,8.503C2.53,8.534,2.193,8.791,2.06,9.16s-0.039,0.782,0.242,1.056l4.213,4.107 l-1.49,6.452c-0.092,0.399,0.069,0.814,0.406,1.047C5.603,21.94,5.801,22,6,22c0.193,0,0.387-0.056,0.555-0.168L12,18.202 l5.445,3.63c0.348,0.232,0.805,0.223,1.145-0.024c0.338-0.247,0.487-0.68,0.372-1.082l-1.829-6.4l4.536-4.082 C21.966,9.976,22.075,9.558,21.947,9.179z"></path></svg>
         -
             id: fylke
             url: //tv.ukm.no/fylke/
             title: Fylkesfestivaler
+            svg: <svg class="icon-some" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill:hsla(222, 18%, 43%, 1);"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm-4.588 15-2.449-1.288L9.514 19l.468-2.728L8 14.342l2.738-.398 1.225-2.48 1.225 2.48 2.738.398-1.981 1.931.467 2.727zM19 9H5V7h14v2z"></path></svg>
         -
-            id: lokal
-            url: //tv.ukm.no/lokal/
-            title: Lokalmønstringer
-        -
+            # id: lokal
+            # url: //tv.ukm.no/lokal/
+            # title: Lokalmønstringer
+            # svg: 
+        # -
             id: info
             url: //tv.ukm.no/info/
             title: Infovideoer
@@ -393,3 +396,21 @@ english:
             id: about
             url: //ukm.no/about-ukm/
             title: About UKM
+
+erukmformeg:
+    url: //ukm.no/
+    title: Er UKM for meg
+    scheme: 'default'
+    pages:
+        - 
+            id: erukmformeg
+            url: //ukm.no/hvorfor/
+            title: Er UKM for meg?
+        -
+            id: hvaskjerpåukm
+            url: //ukm.no/hva-er/
+            title: Hva skjer på UKM?
+        -
+            id: arrangementernaermeg
+            url: //ukm.no/fylker/
+            title: Arrangementer nær meg?
