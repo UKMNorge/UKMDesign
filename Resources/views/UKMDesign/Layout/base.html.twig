@@ -33,7 +33,7 @@
 				</div>
 			{% elseif showHeros is defined and showHeros %}
 				<div class="vibakukm">
-				<div class="geolocation-banner"></div>
+				{% include "UKMDesign/Layout/geolocation.html.twig" %}
 				<div class="ukm-bolge ukm-bolge-front">
 					<div class="div-radius div-radius-tint"></div>
 					<div class="div-radius"></div>
@@ -47,11 +47,6 @@
 						<div class="row">
 							<div class="col-12 col-sm-10 offset-sm-1">
 								{% block heros %}{% endblock %}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 col-sm-10 offset-sm-1">
-								{# {% block hero_cta %}{% endblock %} #}
 							</div>
 						</div>
 					</div>
