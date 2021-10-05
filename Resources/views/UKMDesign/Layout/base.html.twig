@@ -3,37 +3,41 @@
 {% block framework_content %}
 	<div id="UKMDesign_content">
 		<div class="hamburger-overlay show"></div>
-
 		{# HEADER #}
 		<header>
 			{% if showHero is defined and showHero %}
 				{# GEOLOCATION TOP #}
 				{% include "UKMDesign/Layout/geolocation.html.twig" %}
-				<div class="ukm-bolge ukm-bolge-front">
-					<div class="div-radius div-radius-tint"></div>
-					<div class="div-radius"></div>
-					<div class="container">
-						<nav class="navbar navbar-expand-lg ukm-navbar">
-							<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_hvit.png"/></a>
-							{% include "UKMDesign/Layout/nav.html.twig" %}
-						</nav>
+				{% include "UKMDesign/Wave/bolge-component.html.twig" %}
+				<div class="container hero-container">
+					<div class="row">
+						<div class="col-12 col-sm-10 offset-sm-1">
+							{% block hero %}{% endblock %}
+						</div>
 					</div>
+					<div class="row">
+						<div class="col-12 col-sm-10 offset-sm-1">
+							{% block hero_cta %}{% endblock %}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% elseif vibakukm is defined and vibakukm %}
+				<div class="vibakukm">
+					{% include "UKMDesign/Layout/geolocation.html.twig" %}
+					{% include "UKMDesign/Wave/bolge-component.html.twig" %}
 					<div class="container hero-container">
 						<div class="row">
 							<div class="col-12 col-sm-10 offset-sm-1">
-								{% block hero %}{% endblock %}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 col-sm-10 offset-sm-1">
-								{% block hero_cta %}{% endblock %}
+								{% block heros %}{% endblock %}
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 			{% else %}
 				<div class="geolocation-banner"></div>
-				<nav class="navbar ukm-navbar other-page">
+				<nav class="navbar ukm-navbar navbar-expand-lg other-page">
 					<div class="container">
 						<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
 						{% include "UKMDesign/Layout/nav.html.twig" %}
@@ -41,10 +45,6 @@
 				</div>
 			{% endif %}
 		</header>
-		{% block sectionNav %}{% endblock %}
-		{% block content %}Designfil mangler content-block.
-		{% endblock %}
-	</div>
-
-	{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}
-{% endblock %}
+{% block sectionNav %}{% endblock %}
+{% block content %}Designfil mangler content-block.
+{% endblock %}</div>{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}{% endblock %}
