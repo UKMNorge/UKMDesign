@@ -8,17 +8,17 @@
 							<path d="M21.743,12.331l-9-10c-0.379-0.422-1.107-0.422-1.486,0l-9,10c-0.265,0.293-0.331,0.715-0.17,1.076 C2.247,13.768,2.605,14,3,14h2v7c0,0.552,0.447,1,1,1h3c0.553,0,1-0.448,1-1v-4h4v4c0,0.552,0.447,1,1,1h3c0.553,0,1-0.448,1-1v-7h2 c0.395,0,0.753-0.232,0.913-0.593C22.074,13.046,22.008,12.625,21.743,12.331z"></path>
 						</svg>
 						<span class="accordSubtext">UKM</span>
-						{# <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
+						<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" >
 							<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-						</svg> #}
+						</svg>
 					</a>
 				</li>
-				{% for section in UKMDesign.getSitemap().getBreadcrumbs().getSections() %}
+				{% for section in UKMDesign.getSitemap().getBreadcrumbs().getSections()|slice(0, 2) %}
 					{% if section.getPages().getCount() == 0 %}
 						<li class="nav-item">
 							<a class="nav-link footerLinks" href="{{ section.getUrl() }}">
 								<span class="accordSubtext">{{ section.getTitle() }}</span>
-								<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
+								<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" >
 									<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
 								</svg>
 							</a>
@@ -29,7 +29,7 @@
 							<li class="nav-item">
 								<a class="nav-link footerLinks" href="{{ pagen.getUrl() }}">
 									<span class="accordSubtext">{{ pagen.getTitle() }}</span>
-									<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" style="margin-right: 0.4rem;">
+									<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="hsl(228, 96%, 67%)" >
 										<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
 									</svg>
 								</a>
