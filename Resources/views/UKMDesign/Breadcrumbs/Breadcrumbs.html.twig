@@ -13,7 +13,7 @@
 						</svg>
 					</a>
 				</li>
-				{% for section in UKMDesign.getSitemap().getBreadcrumbs().getSections() %}
+				{% for section in UKMDesign.getSitemap().getBreadcrumbs().getSections()|slice(0, 2) %}
 					{% if section.getPages().getCount() == 0 %}
 						<li class="nav-item">
 							<a class="nav-link footerLinks" href="{{ section.getUrl() }}">
