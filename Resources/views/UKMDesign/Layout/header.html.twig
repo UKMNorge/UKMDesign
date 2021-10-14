@@ -1,0 +1,39 @@
+{% block navbar %}
+	<div class="container-fluid {{ UKMDesign.getHeader().hasBanner() ? 'background' }}" id="UKMheader" style="{{ UKMDesign.getHeader().hasBanner() ? UKMDesign.getHeader().getBanner().getBackgroundStyle() }}">
+		{% if UKMDesign.getHeader().hasBanner() and UKMDesign.getHeader().getBanner().hasLarge() %}
+			<style>
+				@media(min-width: 992px) {
+					#UKMheader {
+						background-image: url('{{ UKMDesign.getHeader().getBanner().getLarge().getUrl() }}') !important;
+					}
+				}
+			</style>
+		{% endif %}
+		<header>
+			{% if not UKMDesign.getHeader().hasBanner() and UKMDesign.getHeader().visibleSectionTitle() %}
+				<div class="sectionTitle center">
+					<a href="{{ UKMDesign.getCurrentSection().getUrl() }}">{{ UKMDesign.getCurrentSection().getTitle() }}</a>
+				</div>
+			{% endif %}
+
+			<div class="clearfix"></div>
+		</header>
+		{% if UKMDesign.getHeader().hasSlogan() %}
+			<div class="container" id="UKMslogan_container">
+				<div class="row">
+					<div class="col-12">
+						<p class="lead center" id="UKMslogan">{{ UKMDesign.getHeader().getSlogan() }}</p>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		{% if UKMDesign.getHeader().hasBanner() and UKMDesign.getHeader().visibleSectionTitle() %}
+			<div class="sectionTitle bottom">
+				<a href="{{ UKMDesign.getCurrentSection().getUrl() }}">{{ UKMDesign.getCurrentSection().getTitle() }}</a>
+			</div>
+		{% endif %}
+
+	</div>
+
+	<div class="navbar-separator" id="UKMheader_separator"></div>
+{% endblock %}
