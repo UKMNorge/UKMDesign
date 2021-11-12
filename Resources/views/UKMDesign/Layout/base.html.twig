@@ -22,30 +22,44 @@
 					</div>
 				</div>
 			</div>
-			{% elseif vibakukm is defined and vibakukm %}
-				<div class="vibakukm">
-					{% include "UKMDesign/Layout/geolocation.html.twig" %}
-					{% include "UKMDesign/Wave/bolge-component.html.twig" %}
-					<div class="container hero-container">
-						<div class="row">
-							<div class="col-12 col-sm-10 offset-sm-1">
-								{% block heros %}{% endblock %}
-							</div>
+		{% elseif vibakukm is defined and vibakukm %}
+			<div class="vibakukm">
+				{% include "UKMDesign/Layout/geolocation.html.twig" %}
+				{% include "UKMDesign/Wave/bolge-component.html.twig" %}
+				<div class="container hero-container">
+					<div class="row">
+						<div class="col-12 col-sm-10 offset-sm-1">
+							{% block heros %}{% endblock %}
 						</div>
 					</div>
 				</div>
 			</div>
-			{% else %}
-				<div class="geolocation-banner"></div>
-				<nav class="navbar ukm-navbar navbar-expand-lg other-page">
-					<div class="container">
-						<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
-						{% include "UKMDesign/Layout/nav.html.twig" %}
-					</nav>
+		</div>
+	{% elseif bolgecomponent is defined and bolgecomponent %}
+			<div class="bolgepage">
+				{% include "UKMDesign/Layout/geolocation.html.twig" %}
+				{% include "UKMDesign/Wave/bolge-component.html.twig" %}
+				<div class="container hero-container">
+					<div class="row">
+						<div class="col-12 col-sm-10 offset-sm-1">
+							{% block herotext %}{% endblock %}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-sm-10 offset-sm-1">
+							{% block hero_button %}{% endblock %}
+						</div>
+					</div>
 				</div>
-			{% endif %}
-		</header>
-
-{% block sectionNav %}{% endblock %}
-{% block content %}Designfil mangler content-block.
-{% endblock %}</div>{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}{% endblock %}
+			</div>
+			</div>
+	</div>
+{% else %}
+	<div class="geolocation-banner"></div>
+	<nav class="navbar ukm-navbar navbar-expand-lg other-page">
+		<div class="container">
+			<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
+			{% include "UKMDesign/Layout/nav.html.twig" %}
+		</nav>
+	</div>
+{% endif %}</header>{% block sectionNav %}{% endblock %}{% block content %}Designfil mangler content-block.{% endblock %}</div>{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}{% endblock %}
