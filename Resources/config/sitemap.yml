@@ -61,9 +61,9 @@ navbar:
     scheme: 'default'
     pages:
         -
-            id: festivalen
-            url: //festivalen.ukm.no/
-            title: UKM-festivalen
+            id: aktiviteter
+            url: //ukm.no/aktiviteter/
+            title: Aktiviteter
             description: Alt om UKM-festivalen
         - 
             id: redaksjonelt
