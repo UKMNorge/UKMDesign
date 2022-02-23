@@ -17,7 +17,7 @@ UKM:
         - 
             id: login
             url: //ukm.no/wp-login.php/
-            title: Logg inn
+            title: logg inn
             description: Logg inn som lokalkontakt
         - 
             id: festivalen
