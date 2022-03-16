@@ -42,7 +42,7 @@ parameters:
     SEOdefaultsApp:
     firenullfire:
         title: Siden finnes ikke!
-        text: Siden du søker har enten blitt flyttet eller aldri eksistert (spooky)
+        text: Vi fant dessverre ikke det du søkte etter. Siden du søker har enten blitt flyttet eller aldri eksistert.
     
     logoer:
         ukm:
