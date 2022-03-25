@@ -1,0 +1,56 @@
+<div class="active delta-menu">
+   <button class="hamburger-button hamburger nav-item dropdown" style="background: transparent" id="login-meny" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <span></span>
+        <span></span>
+   </button>
+   <div id="deltaMainMenu" class="hamburger-menu dropdown-menu dropdown-menu-right" aria-labelledby="DropdownLoginLink">
+      <div class="mainpage">
+         <h5 style="font-size: 12px; margin: 5px 0 10px 0; padding: 0 23px;">Menu:</h5>
+         <div class="dropdown-divider"></div>
+            {% if sitemap_extras is defined %}
+                {% for page in sitemap_extras.getPages().getAll() %}
+                <a href="{{ page.getUrl() }}" {{ page.getTargetProperty() }} class="dropdown-item drop-item">
+                    {{ page.getTitle() }}
+                </a>
+                {% endfor %}
+            {% endif %}
+        </div>
+      </div>
+   </div>
+</div>
+
+
+
+<style>
+#deltaMainMenu {
+    box-shadow: 0px 0 11px 7px #0000002b;
+    margin-top: 20px;
+}
+.hamburger-button {
+    border: none;
+    padding: 0;
+}
+.hamburger-button .line-hamburger {
+    background: #f00;
+    height: 3px;
+    width: 30px;
+    margin: 7px;
+}
+#deltaMenu.collapsing,
+#deltaMenu.show {
+    position: fixed;
+    width: 70%;
+    max-width: 1200px;
+    min-width: 320px;
+    min-height: calc(100% - 150px);
+    border-radius: 10px;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    top: 150px;
+    bottom: 0;
+    background: #fff;
+    margin: auto;
+    box-shadow: 1px 1px 1px #bebebe;
+}
+</style>
