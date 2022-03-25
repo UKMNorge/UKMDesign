@@ -58,10 +58,13 @@
 	<div class="geolocation-banner"></div>
 	<nav class="navbar ukm-navbar navbar-expand-lg other-page">
 		<div class="container">
-			<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
+			{# Det er delta #}
 			{% if app.request.getSchemeAndHttpHost() == 'https://delta.ukm.dev' or app.request.getSchemeAndHttpHost() == 'https://delta.ukm.no'  %}
+				<a class="navbar-brand clickable" href="/"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
 				{% include "UKMDesign/Layout/deltanav.html.twig" %}
+			{# Det er ikke delta #}
 			{% else %}			
+				<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
 				{% include "UKMDesign/Layout/nav.html.twig" %}
 			{% endif %}
 		</nav>
