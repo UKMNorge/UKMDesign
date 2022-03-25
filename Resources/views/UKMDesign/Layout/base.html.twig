@@ -59,7 +59,11 @@
 	<nav class="navbar ukm-navbar navbar-expand-lg other-page">
 		<div class="container">
 			<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
-			{% include "UKMDesign/Layout/nav.html.twig" %}
+			{% if app.request.getSchemeAndHttpHost() == 'https://delta.ukm.dev' or app.request.getSchemeAndHttpHost() == 'https://delta.ukm.no'  %}
+				{% include "UKMDesign/Layout/deltanav.html.twig" %}
+			{% else %}			
+				{% include "UKMDesign/Layout/nav.html.twig" %}
+			{% endif %}
 		</nav>
 	</div>
 {% endif %}</header>{% block sectionNav %}{% endblock %}{% block content %}Designfil mangler content-block.{% endblock %}</div>{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}{% endblock %}
