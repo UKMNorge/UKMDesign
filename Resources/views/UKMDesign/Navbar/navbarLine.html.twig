@@ -5,5 +5,7 @@
         </span>
     </span>
     <span class="nav-title">{{ title }}</span>
-    {{ chevron|raw }}
+    {% if chevron is defined %}
+        {{ chevron|raw }}
+    {% endif %}
 </a>
