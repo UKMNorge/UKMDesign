@@ -1,6 +1,6 @@
 <li class="some-item some-item-small list-group-item">
     <a href="{{ link }}" aria-label="{{ name }}">
-        <span class="dot svg-dot {{ exception }}">
+        <span class="dot svg-dot {{ exception ? exception : '' }}">
             {{ svg|raw }}
         </span>
     </a>
