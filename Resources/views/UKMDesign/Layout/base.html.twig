@@ -69,4 +69,11 @@
 			{% endif %}
 		</nav>
 	</div>
-{% endif %}</header>{% block sectionNav %}{% endblock %}{% block content %}Designfil mangler content-block.{% endblock %}</div>{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}{% endblock %}
+{% endif %}</header>
+
+{# FESTIVALEN #}
+{% if page and page.url and ('festivalen.ukm.' in page.url or 'ukm.dev/festivalen' in page.url or 'ukm.no/festivalen' in page.url) %}
+	{% include "UKMDesign/Layout/festivalnav.html.twig" %}
+{% endif %}
+
+{% block sectionNav %}{% endblock %}{% block content %}Designfil mangler content-block.{% endblock %}</div>{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}{% endblock %}
