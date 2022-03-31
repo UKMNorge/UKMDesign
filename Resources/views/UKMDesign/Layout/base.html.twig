@@ -59,7 +59,7 @@
 	<nav class="navbar ukm-navbar navbar-expand-lg other-page">
 		<div class="container">
 			{# Det er delta #}
-			{% if app.request.getSchemeAndHttpHost() == 'https://delta.ukm.dev' or app.request.getSchemeAndHttpHost() == 'https://delta.ukm.no'  %}
+			{% if app is defined and (app.request.getSchemeAndHttpHost() == 'https://delta.ukm.dev' or app.request.getSchemeAndHttpHost() == 'https://delta.ukm.no')  %}
 				<a class="navbar-brand clickable" href="/"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
 				{% include "UKMDesign/Layout/deltanav.html.twig" %}
 			{# Det er ikke delta #}
