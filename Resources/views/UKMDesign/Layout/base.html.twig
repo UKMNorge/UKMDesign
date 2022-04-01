@@ -72,7 +72,7 @@
 {% endif %}</header>
 
 {# FESTIVALEN #}
-{% if page and page.url and ('festivalen.ukm.' in page.url or 'ukm.dev/festivalen' in page.url or 'ukm.no/festivalen' in page.url) %}
+{% if page is defined and page.url and ('festivalen.ukm.' in page.url or 'ukm.dev/festivalen' in page.url or 'ukm.no/festivalen' in page.url) %}
 	{% include "UKMDesign/Layout/festivalnav.html.twig" %}
 {% endif %}
 
