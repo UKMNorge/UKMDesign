@@ -27,21 +27,26 @@
 		.feelinblue {
 			background-color: #000047;
 		}
-		#UKMheader {
-		    height: 0;
-		}
-		#UKMheader.background {
-		    height: 60vh;
-		}
+        .fesitvalen-banner div {
+            background-repeat: no-repeat;
+            background-position: top !important;
+            background-size: cover !important;
+            min-height: 50vh;
+        }
+        #UKMheader {
+            height: 0;
+        }
+        #UKMheader.background {
+            height: 60vh;
+        }
 	</style>
 {% endblock %}
-
 {% embed "UKMDesign/Layout/header.html.twig"|UKMpath %}{% endembed %}
 
 <div class="feelinblue">
     <div class="container white smallish" style="margin-top: -1rem;">
         <div class="row py-3">
-            <div class="col-4">
+            <div class="col-3">
                 <div class="center navigate">
                     <a class="animateOnExit" href="direkte/">
                         <span class="icon icon-tv"></span>
@@ -51,10 +56,10 @@
                 </div>
             </div>
 			
-            <div class="col-4">
+            <div class="col-3">
                 <div class="center navigate">
                     <a class="animateOnExit" href="deltaker/">
-                        <span class="icon icon-info"></span>
+                        <span class="icon icon-users"></span>
                         <br/>
                         Deltakere
                     </a>
@@ -71,7 +76,7 @@
                 </div>
             </div>
 #}
-			<div class="col-4">
+			<div class="col-3">
                 <div class="center navigate">
                     <a class="animateOnExit" href="program/">
                         <span class="icon icon-ticket"></span>
@@ -81,9 +86,20 @@
                 </div>
             </div>
 
+            <div class="col-3">
+                <div class="center navigate">
+                    <a class="animateOnExit" href="kontakt-info/">
+                        <span class="icon icon-info"></span>
+                        <br/>
+                        kontakt
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
     <div class="container festival-section news-section mt-4">
+        {% embed "Kategori/Listen.html.twig"|UKMpath %}{% endembed %}
     </div>
 </div>
