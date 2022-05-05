@@ -105,7 +105,7 @@
 
 			<div class="dropdown-divider"></div>
 			<div style="display: flex; justify-content: center; padding-bottom: 1.5rem; border-radius: 15px; background: white;">
-				{% if app.request.getSchemeAndHttpHost() != 'https://delta.ukm.dev' and app.request.getSchemeAndHttpHost() != 'https://delta.ukm.no'  %}
+				{% if app.request.getSchemeAndHttpHost() != 'https://delta.ukm.dev' and app.request.getSchemeAndHttpHost() != 'https://delta.ukm.no' and app.request.getSchemeAndHttpHost() != 'https://delta.ukmdev.no' %}
 					{% include "Norge/Front/Components/Standard-button.html.twig" with {title: 'Start påmelding', path: '/fylker/', extra: 'btn-small btn-blue mt-3'} %}
 				{% endif %}
 			</div>
