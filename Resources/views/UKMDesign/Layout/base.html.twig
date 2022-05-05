@@ -1,6 +1,8 @@
 {% extends ("UKMDesign/Layout/"~ (singleMode is defined and singleMode ? 'singleMode' : 'framework' ) ~".html.twig")|UKMpath %}
 
 {% block framework_content %}
+
+	{% set isDelta = app is defined and (app.request.getSchemeAndHttpHost() == 'https://delta.ukm.dev' or app.request.getSchemeAndHttpHost() == 'https://delta.ukm.no' or app.request.getSchemeAndHttpHost() == 'https://delta.ukmdev.no') %}
 	<div id="UKMDesign_content">
 		<div class="hamburger-overlay show"></div>
 		{# HEADER #}
@@ -59,7 +61,7 @@
 	<nav class="navbar ukm-navbar navbar-expand-lg other-page">
 		<div class="container">
 			{# Det er delta #}
-			{% if app is defined and (app.request.getSchemeAndHttpHost() == 'https://delta.ukm.dev' or app.request.getSchemeAndHttpHost() == 'https://delta.ukm.no' or app.request.getSchemeAndHttpHost() == 'https://delta.ukmdev.no')  %}
+			{% if isDelta  %}
 				<a class="navbar-brand clickable" href="/"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
 				{% include "UKMDesign/Layout/deltanav.html.twig" %}
 			{# Det er ikke delta #}
@@ -76,4 +78,9 @@
 	{% include "UKMDesign/Layout/festivalnav.html.twig" %}
 {% endif %}
 
-{% block sectionNav %}{% endblock %}{% block content %}Designfil mangler content-block.{% endblock %}</div>{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}{% endblock %}
+{% block sectionNav %}{% endblock %}{% block content %}Designfil mangler content-block.{% endblock %}</div>
+	{% if not isDelta  %}
+		{% embed "UKMDesign/Footer/Footer.html.twig"|UKMpath %}{% endembed %}
+	{% endif %}
+		
+{% endblock %}
