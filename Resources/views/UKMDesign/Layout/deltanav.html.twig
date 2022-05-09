@@ -13,7 +13,7 @@
                 <a href="{{ page.getUrl() }}" {{ page.getTargetProperty() }} class="dropdown-item drop-item">
                 <span class="dot dot-grey-large delta-menu-item">
                     <span class="dot svg-dot svg-dot-large">
-                        <img src="https://assets.ukm.dev/img/delta-nytt/menu-ikoner/{{page.id}}.png" class="icon-some" />
+                        <img src="https://assets.{{ UKM_HOSTNAME }}/img/delta-nytt/menu-ikoner/{{page.id}}.png" class="icon-some" />
                     </span>
                 </span>
                     {{ page.getTitle() }}
@@ -25,8 +25,7 @@
    </div>
 </div>
  {% endif %}
-
-
+ 
 <style>
 #deltaMainMenu {
     box-shadow: 0px 0 11px 7px #0000002b;
