@@ -6,6 +6,7 @@ class ListElement extends Block
 {
     const TEMPLATE = 'ListElement';
     public $icon;
+    public $redirectLenke;
 
     public function __construct(String $id, String $title, String $content)
     {
@@ -19,6 +20,13 @@ class ListElement extends Block
         $this->icon = $icon;
         return $this;
     }
+
+    public function setRedirectLenke(String $lenke)
+    {
+        $this->redirectLenke = $lenke;
+        return $this;
+    }
+    
     public function getIcon()
     {
         return $this->icon;
