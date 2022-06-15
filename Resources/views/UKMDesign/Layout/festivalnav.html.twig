@@ -1,27 +1,30 @@
-<div id="festivalHeader" class="container">
-    <a href="/">
+<div id="festivalHeader" onclick="history.back()" class="container">
+    <div>
         <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
-        <h4>Tilbake til festivalsiden</h4>
-    </a>
+        <h4>Tilbake</h4>
+    </div>
 </div>
+
+
 
 {% block css %}
 	<style>
-        #festivalHeader a {
+        #festivalHeader div {
             display: inline-flex;
             padding-top: 7px;
             padding-right: 10px;
             text-decoration: none;
             border-radius: 5px;
         }
-        #festivalHeader a:hover {
+        #festivalHeader div:hover {
+            cursor: pointer;
             background: linear-gradient(45deg, hsl(var(--color-primary-blue-800, var(--color-primary-orange-900))), hsl(var(--color-primary-blue-600, var(--color-primary-orange-900)))) !important;
             color: #fff;
         }
-        #festivalHeader a:hover svg.back-icon {
+        #festivalHeader div:hover svg.back-icon {
             fill: #fff !important;
         }
-        #festivalHeader a svg.back-icon {
+        #festivalHeader div svg.back-icon {
             margin-top: 2px;
         }
 
