@@ -1,3 +1,14 @@
+<div class="container-fluid live-program-info">
+    <a href="/festivalen/program-live-mode">
+        <div class="inner-div container">
+            <p>Live program info</p>
+            <div class="right-side">
+                <div class="blinking-sign"></div>
+            </div>
+        </div>
+    </a>
+</div>
+
 <div id="festivalHeader" onclick="history.back()" class="container">
     <div>
         <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
@@ -27,6 +38,54 @@
         #festivalHeader div svg.back-icon {
             margin-top: 2px;
         }
+
+        .live-program-info {
+            margin-bottom: 20px;
+            padding: 1px;
+            background: #f81288;
+            color: #fff;
+            border: solid 3px transparent;
+            transition: .2s;
+        }
+        .live-program-info:hover {
+            border-color: #02024b;
+            transition: .2s;
+        }
+        .live-program-info a {
+            text-decoration: none;
+            color: #fff !important;
+        }
+        .live-program-info .inner-div {
+            display: flex;
+        }
+        .live-program-info .inner-div p {
+            margin: auto;
+            margin-right: 10px;
+        }
+        .live-program-info .inner-div .right-side {
+            margin: auto;
+            border: solid 1px;
+            border-radius: 50%;
+            padding: 2px;
+            background: #fff;
+            margin-left: 0;
+        }
+        .live-program-info .inner-div .right-side .blinking-sign {
+            background: #008000 !important;
+            animation: blinker 2s linear infinite;
+            border-radius: 50%;
+            box-shadow: 0px 0px 6px 1px green;
+            border: solid 2px #006300;
+            width: 10px;
+            height: 10px;
+            padding: 0px;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: .3;
+            }
+        }
+
         @media(max-width: 767px) {
             #festivalHeader div h4 {
                 font-size: 16px;
