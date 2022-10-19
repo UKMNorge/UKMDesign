@@ -6,7 +6,7 @@
 	{# Brukes på delta #}
 	{% set deltaDomain = app is defined ? app.request.getSchemeAndHttpHost() : "undefined" %}
 	{% set isDelta = app is defined and (
-		deltaDomain == 'https://deltav5.ukmdev.no' or
+		deltaDomain == 'https://deltav5.ukm.no' or
 		deltaDomain == 'https://delta.ukm.no' or 
 		deltaDomain == 'https://delta.ukm.dev' or 
 		deltaDomain == 'https://delta.ukmdev.no'
