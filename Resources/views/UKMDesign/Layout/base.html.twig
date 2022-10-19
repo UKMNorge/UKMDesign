@@ -2,7 +2,15 @@
 
 {% block framework_content %}
 
-	{% set isDelta = app is defined and (app.request.getSchemeAndHttpHost() == 'https://delta.ukm.dev' or app.request.getSchemeAndHttpHost() == 'https://delta.ukm.no' or app.request.getSchemeAndHttpHost() == 'https://delta.ukmdev.no') %}
+
+	{# Brukes på delta #}
+	{% set deltaDomain = app is defined ? app.request.getSchemeAndHttpHost() : "undefined" %}
+	{% set isDelta = app is defined and (
+		deltaDomain == 'https://deltav5.ukmdev.no' or
+		deltaDomain == 'https://delta.ukm.no' or 
+		deltaDomain == 'https://delta.ukm.dev' or 
+		deltaDomain == 'https://delta.ukmdev.no'
+	) %}
 	<div id="UKMDesign_content">
 		<div class="hamburger-overlay show"></div>
 		{# HEADER #}
@@ -63,7 +71,8 @@
 			{# Det er delta #}
 			{% if isDelta  %}
 				<a class="navbar-brand clickable" href="/"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
-				{% include "UKMDesign/Layout/deltanav.html.twig" %}
+				{# på delta brukes Symfony 5 #}
+				{% include "@UKMDesign/Layout/deltanav.html.twig" %}
 			{# Det er ikke delta #}
 			{% else %}			
 				<a class="navbar-brand clickable" href="{{ UKMDesign.getSitemap().getPage('UKM','forsiden') }}"><img class="ukm-logo" src="//assets.{{ UKM_HOSTNAME }}/img/UKM_logo_sort.png"/></a>
