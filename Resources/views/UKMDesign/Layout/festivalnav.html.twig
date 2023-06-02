@@ -1,4 +1,4 @@
-<div class="container-fluid live-program-info">
+{# <div class="container-fluid live-program-info">
     <a href="/festivalen/program-live-mode">
         <div class="inner-div container">
             <p>Live program info</p>
@@ -7,15 +7,30 @@
             </div>
         </div>
     </a>
-</div>
+</div> #}
 
-<div id="festivalHeader" onclick="history.back()" class="container">
+<div id="festivalHeader" class="container">
     <div>
         <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
         <h4>Tilbake</h4>
     </div>
 </div>
 
+{% block javascripts %}
+    <script>
+        // Tilbake knapp på UKM-festivalen
+        $('#festivalHeader').off('click').click( () => {
+            // Hvis det ikke er direkt lenke
+            if(window.history.length > 1 && document.referrer.indexOf(window.location.host) !== -1) {
+                window.history.back();
+            }
+            // Hvis det er direkt lenke, brukes hovedsiden på UKM-festivalen når tilbake knappen trykkes
+            else {
+                window.location.href = "/festivalen";
+            }
+        });
+    </script>
+{% endblock %}
 
 
 {% block css %}
