@@ -48,8 +48,15 @@ class Breadcrumbs
      * @return Section
      */
     public static function addKommune(Kommune $kommune): Section
-    {
-        static::addFylke($kommune->getFylke());
+    {   
+        $fylke = $kommune->getFylke();
+        if($fylke == null) {
+            throw new Exception(
+                'Kommunen ' . $kommune->getNavn() . ' har ingen fylke'
+            );
+        }
+        
+        static::addFylke($fylke);
         return static::addSection(
             new Section(
                 'fylke_' . $kommune->getId(),
