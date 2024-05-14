@@ -6,8 +6,10 @@
 		<div class="row">
 			<div class="col-md-10 ml-md-auto mr-md-auto col-lg-8">
 			{% if true or page and page.meta and page.meta.hendelse == 1 %}
-				<h1 class="article-header">{{ page.getTitle()|raw }}</h1>
+				<h2 class="article-header">{{ page.getTitle()|raw }}</h2>
 			{% endif %}
+			
+			{% block page_content %}{% endblock %}
 			</div>
 			{% block page_menu %}
 				{% if menu is defined %}
