@@ -11,9 +11,11 @@
 
 {# OBS: Midlertidig redirect til annen UKM-festival 20204 nettside ukm-fesitvalen.no #}
 {# Redirect #}
-<script>
-    window.location.href = 'https://ukm-festivalen.no';
-</script>
+{% if page.raw.ID == 5148 %}
+    <script>
+        window.location.href = 'https://ukm-festivalen.no';
+    </script>
+{% endif %}
 
 
 <div id="festivalHeader" class="container">
