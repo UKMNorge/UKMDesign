@@ -117,6 +117,75 @@ parameters:
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla_0100.png'
                             navn: PNG (100px)
+                jubileum:
+                    url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Blå.png'
+                    navn: Jubileumsmerke
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Blå.png'
+                            navn: PNG Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Blå.png'
+                            navn: PNG Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Blå.pdf'
+                            navn: PDF Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Hvit.pdf'
+                            navn: PDF Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Blå.svg'
+                            navn: SVG Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Hvit.svg'
+                            navn: SVG Hvit
+                jubileumliggende:
+                    url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Blå.png'
+                    navn: Jubileumsmerke Liggende
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Blå.png'
+                            navn: PNG Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Hvit.png'
+                            navn: PNG Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Liggende_Blå.pdf'
+                            navn: PDF Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Liggende_Hvit.pdf'
+                            navn: PDF Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Liggende_Blå.svg'
+                            navn: SVG Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Liggende_Hvit.svg'
+                            navn: SVG Hvit
+                jubileumsymbol:
+                    url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Blå.png'
+                    navn: Jubileumsmerke Symbol
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Blå.png'
+                            navn: PNG Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Hvit.png'
+                            navn: PNG Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Symbol_Blå.pdf'
+                            navn: PDF Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Symbol_Hvit.pdf'
+                            navn: PDF Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Symbol_Blå.svg'
+                            navn: SVG Blå
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Symbol_Hvit.svg'
+                            navn: SVG Hvit
 
         ukmmedia:
             navn: UKM Media-logo
