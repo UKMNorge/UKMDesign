@@ -129,17 +129,44 @@ parameters:
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Blå.png'
                             navn: PNG Hvit
                         - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Gul.png'
+                            navn: PNG Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Grønn.png'
+                            navn: PNG Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Rosa.png'
+                            navn: PNG Rosa
+                        - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Blå.pdf'
                             navn: PDF Blå
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Hvit.pdf'
                             navn: PDF Hvit
                         - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Gul.pdf'
+                            navn: PDF Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Grønn.pdf'
+                            navn: PDF Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Rosa.pdf'
+                            navn: PDF Rosa
+                        - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Blå.svg'
                             navn: SVG Blå
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Hvit.svg'
                             navn: SVG Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Gul.svg'
+                            navn: SVG Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Grønn.svg'
+                            navn: SVG Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Rosa.svg'
+                            navn: SVG Rosa
                 jubileumliggende:
                     url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Blå.png'
                     navn: Jubileumsmerke Liggende
@@ -152,17 +179,44 @@ parameters:
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Hvit.png'
                             navn: PNG Hvit
                         - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Hvit.png'
+                            navn: PNG Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Grønn.png'
+                            navn: PNG Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Liggende_Rosa.png'
+                            navn: PNG Rosa
+                        - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Liggende_Blå.pdf'
                             navn: PDF Blå
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Liggende_Hvit.pdf'
                             navn: PDF Hvit
                         - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Liggende_Gul.pdf'
+                            navn: PDF Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Liggende_Grønn.pdf'
+                            navn: PDF Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Liggende_Rosa.pdf'
+                            navn: PDF Rosa
+                        - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Liggende_Blå.svg'
                             navn: SVG Blå
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Liggende_Hvit.svg'
                             navn: SVG Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Liggende_Gul.svg'
+                            navn: SVG Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Liggende_Grønn.svg'
+                            navn: SVG Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Liggende_Rosa.svg'
+                            navn: SVG Rosa
                 jubileumsymbol:
                     url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Blå.png'
                     navn: Jubileumsmerke Symbol
@@ -175,17 +229,44 @@ parameters:
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Hvit.png'
                             navn: PNG Hvit
                         - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Gul.png'
+                            navn: PNG Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Grønn.png'
+                            navn: PNG Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PNG/UKM_40_Symbol_Rosa.png'
+                            navn: PNG Rosa
+                        - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Symbol_Blå.pdf'
                             navn: PDF Blå
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Symbol_Hvit.pdf'
                             navn: PDF Hvit
                         - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Symbol_Gul.pdf'
+                            navn: PDF Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Symbol_Grønn.pdf'
+                            navn: PDF Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/PDF/UKM_40_Symbol_Rosa.pdf'
+                            navn: PDF Rosa
+                        - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Symbol_Blå.svg'
                             navn: SVG Blå
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Symbol_Hvit.svg'
                             navn: SVG Hvit
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Symbol_Gul.svg'
+                            navn: SVG Gul
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Symbol_Grønn.svg'
+                            navn: SVG Grønn
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/jubileum/SVG/UKM_40_Symbol_Rosa.svg'
+                            navn: SVG Rosa
 
         ukmmedia:
             navn: UKM Media-logo
